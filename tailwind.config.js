@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-const svgToDataUri = require("mini-svg-data-uri");
 
+const svgToDataUri = require("mini-svg-data-uri");
+const { nextui } = require("@nextui-org/react");
 const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
@@ -11,6 +12,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -57,8 +59,11 @@ module.exports = {
         },
       },
     },
+    fontFamily: {
+      next: ["next"],
+    },
   },
-  plugins: [require("@tailwindcss/aspect-ratio"), addVariablesForColors],
+  plugins: [require("@tailwindcss/aspect-ratio"), addVariablesForColors, nextui()],
 };
 function addVariablesForColors({ addBase, theme }) {
   let allColors = flattenColorPalette(theme("colors"));
