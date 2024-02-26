@@ -9,13 +9,13 @@ import {
 
 const Footer= (props) => {
   return (
-      <div className="absolute bottom-0 w-screen h-[5rem] bg-black text-gray-400 flex items-center justify-around text-sm" {...props}>
+      <div className="inline-flex w-screen h-[3rem] pb-4 bg-black text-gray-400 self-end items-center justify-around text-sm" {...props}>
         <p>BE-TAYE</p>
-        <div className="w-1/2 flex text-gray-400 text-sm h-4 gap-4  ">
-          <FontAwesomeIcon icon={faInstagram} size="xs" />
-          <FontAwesomeIcon icon={faFacebook} size="xs" />
-          <FontAwesomeIcon icon={faLinkedin} size="xs" />
-          <FontAwesomeIcon icon={faGithub} size="xs" />
+        <div className="w-1/2 flex text-gray-400  h-6 gap-4  ">
+          <FontAwesomeIcon icon={faInstagram}  />
+          <FontAwesomeIcon icon={faFacebook}  />
+          <FontAwesomeIcon icon={faLinkedin}  />
+          <FontAwesomeIcon icon={faGithub}  />
         </div>
         <p>
           Copyright © 2024 BE-TAYE. All rights reserved. Designed with ❤️ by

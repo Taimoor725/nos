@@ -23,7 +23,7 @@ const Page = () => {
         </div>
       </div>
       <div className=""></div>
-      <Footer />
+      <Footer className="absolute bottom-0"/>
     </div>
   );
 };
