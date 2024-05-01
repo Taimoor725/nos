@@ -105,10 +105,10 @@ export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-20">
       <video src="videos/seconf_intro.mp4" className="w-full h-full object-cover absolute z-0 top-[100%]" muted loop autoPlay/>
-      <h1 className="text-2xl md:text-7xl font-bold text-slate-500 absolute z-1 top-[100%] left-[10%]">
+      <h1 className="text-2xl md:text-5xl font-bold text-slate-500 absolute z-1 top-[100%] left-[10%]">
         The Ultimate <br /> Cars agency
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 text-slate-500 absolute z-1 top-[140%] left-[10%]">
+      <p className="max-w-2xl text-base md:text-lg mt-8 text-slate-500 absolute z-1 top-[130%] left-[10%]">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, neque? Saepe, corrupti est eius obcaecati repellat ratione distinctio at asperiores vero repudiandae aut provident. Molestiae quam, animi sint, eius, sunt repellendus beatae maiores consectetur facilis itaque est amet autem ipsam. Debitis, architecto labore quos explicabo quod sunt iusto. Perferendis, iure.
       </p>
     </div>
