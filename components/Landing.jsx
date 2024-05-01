@@ -13,6 +13,8 @@ import { TeamSlider } from "./Home/infinity-scroll";
 import { TextGenerateEffect } from "./Home/text-reveal";
 import Footer from "./footer";
 import { EvervaultCard } from "./Home/evervault-card";
+import Loading from "@/app/loading"
+import { Suspense } from "react";
 
 const Landing = () => {
   const content = [
@@ -161,6 +163,7 @@ const Landing = () => {
   ];
   return (
     <>
+      <Suspense fallback={Loading}>
       <Navbar />
       <Logo />
       <div className="w-screen h-screen relative">
@@ -227,6 +230,7 @@ Rencontrez nos experts, une équipe diversifiée de professionnels passionnés p
         <BackgroundBeams />
       </div>
       {/* <Footer /> */}
+      </Suspense>
     </>
   );
 };
