@@ -67,9 +67,9 @@ export const HeroParallax = ({
           translateY,
           opacity,
         }}
-        className=""
+        // className=""
       >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-10 mb-20">
           {firstRow.map((product) => (
             <ProductCard
               product={product}
@@ -78,7 +78,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20 ">
+        <motion.div className="flex flex-row  mb-20 space-x-10 ">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
@@ -103,18 +103,13 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        The Ultimate <br /> marketing agency
+    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-20">
+      <video src="videos/seconf_intro.mp4" className="w-full h-full object-cover absolute z-0 top-[100%]" muted loop autoPlay/>
+      <h1 className="text-2xl md:text-7xl font-bold text-slate-500 absolute z-1 top-[100%]">
+        The Ultimate <br /> Cars agency
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-            votre agence en marketing digital, accompagne les entreprises de
-            toutes tailles et de tous secteurs grâce à son expertise en
-            acquisition et création. Nos consultants web passionnés conçoivent
-            et mettent en œuvre votre stratégie digitale avec pour objectif la
-            performance et la rentabilité. Nous vous accompagnons dans la
-            réalisation de vos objectifs de visibilité et d'expansion à travers
-            des stratégies numériques innovantes et sur mesure.
+      <p className="max-w-2xl text-base md:text-xl mt-8 text-slate-500 absolute z-1 top-[140%]">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, neque? Saepe, corrupti est eius obcaecati repellat ratione distinctio at asperiores vero repudiandae aut provident. Molestiae quam, animi sint, eius, sunt repellendus beatae maiores consectetur facilis itaque est amet autem ipsam. Debitis, architecto labore quos explicabo quod sunt iusto. Perferendis, iure.
       </p>
     </div>
   );
@@ -140,7 +135,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative flex-shrink-0"
+      className="group/product h-96 w-[25rem] relative flex-shrink-0"
     >
       <Link
         href={product.link}

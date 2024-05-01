@@ -5,8 +5,8 @@ import { NextUIProvider } from "@nextui-org/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "BE-TAYE",
-  description: "creative agency",
+  title: "Ferrari",
+  description: "Car agency",
 };
 
 export default function RootLayout({ children }) {

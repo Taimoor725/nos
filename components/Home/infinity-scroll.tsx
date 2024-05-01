@@ -99,7 +99,7 @@ export const TeamSlider = ({
           >
             <div className="w-auto h-auto relative">
                 <div className="absolute w-full h-full  opacity-0 hover:opacity-100 transition-opacity">
-             <div className=" text-white outline-black font-bold text-5xl absolute right-1/2 top-1/2 translate-x-1/2 translate-y-1/2 ">
+             <div className=" text-white outline-black font-bold text-xl absolute right-1/2 top-1/2 translate-x-1/2 translate-y-1/2 ">
                 {item.name}
               </div>
               </div>

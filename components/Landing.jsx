@@ -38,16 +38,16 @@ const Landing = () => {
     },
   ];
   const images = [
-    "https://images.unsplash.com/photo-1606164510427-0dff1bcb27d2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1503198515498-d0bd9ed16902?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJsYWNrJTIwJTI2JTIwd2hpdGV8ZW58MHx8MHx8fDA%3D",
-    "https://images.unsplash.com/photo-1635248677595-17a15f7a1972?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJsYWNrJTIwJTI2JTIwd2hpdGV8ZW58MHx8MHx8fDA%3D",
-    "https://images.unsplash.com/photo-1496672254107-b07a26403885?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJsYWNrJTIwJTI2JTIwd2hpdGV8ZW58MHx8MHx8fDA%3D",
-    "https://images.unsplash.com/photo-1440899046124-38241f9fe54d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJsYWNrJTIwJTI2JTIwd2hpdGV8ZW58MHx8MHx8fDA%3D",
-    "https://images.unsplash.com/photo-1538898780761-268f71f67675?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJsYWNrJTIwJTI2JTIwd2hpdGV8ZW58MHx8MHx8fDA%3D",
-    "https://images.unsplash.com/photo-1575223066808-141f62f353d3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGJsYWNrJTIwJTI2JTIwd2hpdGV8ZW58MHx8MHx8fDA%3D",
-    "https://images.unsplash.com/photo-1571844437758-9e7bb9a5fdf6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGJsYWNrJTIwJTI2JTIwd2hpdGV8ZW58MHx8MHx8fDA%3D",
-    "https://images.unsplash.com/photo-1500238969924-795042f75b7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGJsYWNrJTIwJTI2JTIwd2hpdGV8ZW58MHx8MHx8fDA%3D",
-    "https://images.unsplash.com/photo-1571844437758-9e7bb9a5fdf6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGJsYWNrJTIwJTI2JTIwd2hpdGV8ZW58MHx8MHx8fDA%3D",
+    "/Home/traning.jpg",
+    "/Home/formula_1.jpg",
+    "/Home/traning.jpg",
+    "/Home/formula_1.jpg",
+    "/Home/traning.jpg",
+    "/Home/formula_1.jpg",
+    "/Home/traning.jpg",
+    "/Home/formula_1.jpg",
+    "/Home/traning.jpg",
+    "/Home/formula_1.jpg",
   ];
   const products = [
     {
@@ -108,54 +108,54 @@ const Landing = () => {
   ];
   const team = [
     {
-      name: "Haseeb",
+      name: "ABDULLAH",
       image: "/team/team_3.webp",
     },
 
     {
-      name: "Haseeb",
+      name: "ABDULLAH",
       image: "/team/team_2.webp",
     },
     {
-      name: "Haseeb",
+      name: "ABDULLAH",
       image: "/team/team_3.webp",
     },
     {
-      name: "Haseeb",
+      name: "ABDULLAH",
       image: "/team/team_2.webp",
     },
     {
-      name: "Haseeb",
-      image: "/team/team_3.webp",
-    },
-
-    {
-      name: "Haseeb",
-      image: "/team/team_2.webp",
-    },
-    {
-      name: "Haseeb",
-      image: "/team/team_3.webp",
-    },
-    {
-      name: "Haseeb",
-      image: "/team/team_2.webp",
-    },
-    {
-      name: "Haseeb",
+      name: "ABDULLAH",
       image: "/team/team_3.webp",
     },
 
     {
-      name: "Haseeb",
+      name: "ABDULLAH",
       image: "/team/team_2.webp",
     },
     {
-      name: "Haseeb",
+      name: "ABDULLAH",
       image: "/team/team_3.webp",
     },
     {
-      name: "Haseeb",
+      name: "ABDULLAH",
+      image: "/team/team_2.webp",
+    },
+    {
+      name: "ABDULLAH",
+      image: "/team/team_3.webp",
+    },
+
+    {
+      name: "ABDULLAH",
+      image: "/team/team_2.webp",
+    },
+    {
+      name: "ABDULLAH",
+      image: "/team/team_3.webp",
+    },
+    {
+      name: "ABDULLAH",
       image: "/team/team_2.webp",
     },
   ];
@@ -166,16 +166,10 @@ const Landing = () => {
       <div className="w-screen h-screen relative">
         <div className="absolute w-full h-full z-10 flex flex-col items-center justify-center text-white gap-8">
           <h1 className="text-4xl lg:text-8xl font-bold font-next bg-gradient-to-r from-gray-200 to-gray-500 inline-block text-transparent bg-clip-text drop-shadow-md">
-            BE-TAYE
+            FERRARI
           </h1>
           <p className="w-1/2 text-center hidden md:text-md lg:flex text-gray-100 capitalize">
-            votre agence en marketing digital, accompagne les entreprises de
-            toutes tailles et de tous secteurs grâce à son expertise en
-            acquisition et création. Nos consultants web passionnés conçoivent
-            et mettent en œuvre votre stratégie digitale avec pour objectif la
-            performance et la rentabilité. Nous vous accompagnons dans la
-            réalisation de vos objectifs de visibilité et d'expansion à travers
-            des stratégies numériques innovantes et sur mesure.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo earum sed ex quis, consequatur quidem sit tenetur ea itaque aliquam inventore iste sint pariatur. Iure at quasi eius ipsam corporis ab voluptatum asperiores architecto.
           </p>
           <NextUIProvider>
             <div className="flex gap-x-8 z-10">
@@ -190,11 +184,12 @@ const Landing = () => {
           </NextUIProvider>
         </div>
         <video
-          src="/videos/bg.mp4"
+          src="/videos/intro.mp4"
           className="w-full h-full object-cover"
           autoPlay
           muted
           loop
+    
         />
       </div>
       {/* <StickyScroll content={content} /> */}
@@ -231,7 +226,7 @@ Rencontrez nos experts, une équipe diversifiée de professionnels passionnés p
         </div>
         <BackgroundBeams />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

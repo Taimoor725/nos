@@ -6,9 +6,7 @@ import React from "react";
 const Loading = () => {
   return (
     <div className="w-screen h-screen bg-black flex items-center justify-center">
-      <NextUIProvider>
-        <Spinner />
-      </NextUIProvider>
+        <img src="/Home/whiteLogo.png" alt="loading..." className="w-[60%] h-[50%]"/>
     </div>
   );
 };
