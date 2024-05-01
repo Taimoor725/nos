@@ -5,9 +5,11 @@ import React from "react";
 
 const Loading = () => {
   return (
-    <div className="w-screen h-screen bg-black flex items-center justify-center">
-        <img src="/Home/whiteLogo.png" alt="loading..." className="w-[60%] h-[50%]"/>
-    </div>
+    <div className="w-screen h-screen bg-black flex items-center justify-center relative">
+  <div className="w-[10rem] h-[10rem] border-black border-[4px] rounded-full border-t-white animate-spin"></div>
+  <img src="/Home/whiteLogo.png" alt="loading..." className="w-[10%] h-[10%] absolute inset-0 m-auto" />
+</div>
+
   );
 };
 
