@@ -72,11 +72,11 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full boder border-transparent dark:bg-[#00000040] dark:border-white/[0.2] bg-white shadow-input flex justify-center  items-center space-x-4 px-6 py-6 backdrop-filter backdrop-blur-lg"
+      className="relative rounded-full boder border-transparent dark:bg-[#00000040] dark:border-white/[0.2] bg-white shadow-input flex justify-center items-center space-x-4 py-4 backdrop-filter backdrop-blur-lg"
     >
         <Tooltip content="Home">
-        <button className="w-[6%] h-[95%]">
-        <img src="/logo.png" alt="loading" className="w-full"/>
+        <button className="w-[10%] h-[95%]">
+        <img src="/logo.jpeg" alt="loading" className="w-full rounded-full object-cover"/>
         </button>
         </Tooltip>
       {children}
@@ -127,18 +127,18 @@ export const HoveredLink = ({ children, ...rest }: any) => {
   );
 };
 
-export function Navbar({ className }: { className?: string }) {
+export default function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
     <div
       className={cn(
-        "fixed top-10 inset-x-0 max-w-xl mx-auto z-50 hidden sm:block",
+        "fixed top-10 inset-x-0 max-w-md mx-auto z-50 hidden sm:block",
         className,
       )}
     >
       <div>
       <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="RACING">
+        <MenuItem setActive={setActive} active={active} item="CARRO SERIE">
           <div className="  text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
               title="Formula 1"
@@ -167,7 +167,7 @@ export function Navbar({ className }: { className?: string }) {
           </div>
         </MenuItem>
         <Link href={'/agence'}>
-          <MenuItem setActive={setActive} active={active} item="SPORTS CAR">
+          <MenuItem setActive={setActive} active={active} item="SALES PAGE">
           <div className="  text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
               title="Formula 1"
@@ -196,28 +196,28 @@ export function Navbar({ className }: { className?: string }) {
           </div>
           </MenuItem>
           </Link>
-        <MenuItem setActive={setActive} active={active} item="COLLECTION">
+        <MenuItem setActive={setActive} active={active} item="PAGES">
           <div className="  text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
-              title="Brand Revolution"
+              title="About us"
               href="https://algochurn.com"
               src="/images/articles/article_4.jpg"
               description="Prepare for tech interviews like never before."
             />
             <ProductItem
-              title="Digital Dominance"
+              title="Contact us"
               href="https://tailwindmasterkit.com"
               src="/images/articles/article_3.jpg"
               description="Maximize your online presence with digital marketing."
             />
             <ProductItem
-              title="Compelling Content"
+              title="Blog"
               href="https://gomoonbeam.com"
               src="/images/articles/article_3.jpg"
               description="Craft captivating content that resonates."
             />
             <ProductItem
-              title="Social Success"
+              title="Help center"
               href="https://userogue.com"
               src="/images/articles/article_4.jpg"
               description="Foster engagement and amplify your message"
@@ -225,7 +225,7 @@ export function Navbar({ className }: { className?: string }) {
           </div>
         </MenuItem>
 
-        <MenuItem setActive={setActive} active={active} item="EXPERTISE">
+        {/* <MenuItem setActive={setActive} active={active} item="EXPERTISE">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/hobby">Strategic Solutions</HoveredLink>
             <HoveredLink href="/individual">Industry Insights</HoveredLink>
@@ -239,7 +239,7 @@ export function Navbar({ className }: { className?: string }) {
           active={active}
           item="ABOUT US"
         ></MenuItem>
-        </Link>
+        </Link> */}
       </Menu>
       </div>
     </div>

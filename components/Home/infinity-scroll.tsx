@@ -97,12 +97,7 @@ export const TeamSlider = ({
             }}
             key={item.name}
           >
-            <div className="w-auto h-auto relative">
-                <div className="absolute w-full h-full  opacity-0 hover:opacity-100 transition-opacity">
-             <div className=" text-white outline-black font-bold text-xl absolute right-1/2 top-1/2 translate-x-1/2 translate-y-1/2 ">
-                {item.name}
-              </div>
-              </div>
+            <div className="w-auto h-auto relative text-xl hover:text-3xl">
               <Image
                 className="h-full w-auto object-cover rounded-2xl"
                 alt="team_member"
@@ -110,6 +105,7 @@ export const TeamSlider = ({
                 width={250}
                 src={item.image}
               />
+              <p className="text-white absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">{item.name}</p>
             </div>
           </li>)
         })}

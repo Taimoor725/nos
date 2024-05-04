@@ -18,12 +18,12 @@ const Logo = () => {
       <div
         className="text-3xl font-bold font-next text-white drop-shadow-md fixed top-12 left-12 z-40 cursor-pointer"
       >
-        <img
+        {/* <img
           src="/Home/whiteLogo.png"
-          alt="."
+          alt="..."
           className="w-32 h-16"
           ref={imgRef}
-        />
+        /> */}
       </div>
     </Link>
   );

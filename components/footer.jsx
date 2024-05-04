@@ -1,28 +1,65 @@
-import React from 'react'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faGithub,
-  faInstagram,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faInfoCircle, faEnvelope, faCog, faShoppingCart, faCar, faUsers, faFileAlt } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF, faTwitter, faInstagram, faLinkedinIn, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
-const Footer= (props) => {
+const Footer = () => {
   return (
-      <div className="inline-flex w-screen h-[3rem] pb-4 bg-black text-gray-400 self-end items-center justify-around text-sm" {...props}>
-        <p>BE-TAYE</p>
-        <div className="w-1/2 flex text-gray-400  h-6 gap-4  ">
-          <FontAwesomeIcon icon={faInstagram}  />
-          <FontAwesomeIcon icon={faFacebook}  />
-          <FontAwesomeIcon icon={faLinkedin}  />
-          <FontAwesomeIcon icon={faGithub}  />
+    <footer className="bg-white text-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="flex justify-between mb-10">
+          <div className="flex items-center">
+            <FontAwesomeIcon icon={faCar} className="text-3xl text-red-500 mr-2" />
+            <span className="text-lg font-semibold">AUTOCENTER NIEDERBIPP AG</span>
+          </div>
+          <div className="flex space-x-4">
+            <a href="#" className="text-xl"><FontAwesomeIcon icon={faFacebookF} /></a>
+            <a href="#" className="text-xl"><FontAwesomeIcon icon={faTwitter} /></a>
+            <a href="#" className="text-xl"><FontAwesomeIcon icon={faInstagram} /></a>
+            <a href="#" className="text-xl"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+            <a href="#" className="text-xl"><FontAwesomeIcon icon={faYoutube} /></a>
+          </div>
         </div>
-        <p>
-          Copyright © 2024 BE-TAYE. All rights reserved. Designed with ❤️ by
-          high-haseeb.
-        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold">Company</h2>
+            <ul>
+              <li><a href="#"><FontAwesomeIcon icon={faHome} /> Home</a></li>
+              <li><a href="#"><FontAwesomeIcon icon={faInfoCircle} /> About us</a></li>
+              <li><a href="#"><FontAwesomeIcon icon={faEnvelope} /> Contact us</a></li>
+            </ul>
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold">Services</h2>
+            <ul>
+              <li><a href="#"><FontAwesomeIcon icon={faCog} /> Maintenance</a></li>
+              <li><a href="#"><FontAwesomeIcon icon={faShoppingCart} /> Buy a car</a></li>
+              <li><a href="#"><FontAwesomeIcon icon={faCar} /> Rent a car</a></li>
+              <li><a href="#"><FontAwesomeIcon icon={faUsers} /> Test drives</a></li>
+            </ul>
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold">Resources</h2>
+            <ul>
+              <li><a href="#"><FontAwesomeIcon icon={faFileAlt} /> FAQs</a></li>
+              <li><a href="#"><FontAwesomeIcon icon={faFileAlt} /> Blog</a></li>
+              <li><a href="#"><FontAwesomeIcon icon={faFileAlt} /> Gallery</a></li>
+              <li><a href="#"><FontAwesomeIcon icon={faFileAlt} /> Testimonials</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="mt-12 flex justify-between items-center">
+          <div>
+            <p>&copy; 2024 <a href="#">AUTOCENTER NIEDERBIPP AG</a>. All rights reserved</p>
+          </div>
+          <div>
+            <a href="#" className="mr-4">Privacy policy</a>
+            <a href="#">Terms & condition</a>
+          </div>
+        </div>
       </div>
-  )
-}
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;
