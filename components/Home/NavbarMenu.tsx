@@ -127,7 +127,7 @@ export const HoveredLink = ({ children, ...rest }: any) => {
   );
 };
 
-export default function Navbar({ className }: { className?: string }) {
+export function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
     <div

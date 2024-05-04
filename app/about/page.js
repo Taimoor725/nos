@@ -1,4 +1,4 @@
-import Navbar from '@/components/Home/NavbarMenu'
+import {Navbar} from '@/components/Home/NavbarMenu'
 import React from 'react'
 import Landing from '@/components/about/Landing'
 import Intro from '@/components/about/Intro'

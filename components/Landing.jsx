@@ -3,7 +3,7 @@ import React from "react";
 import { FloatingNav } from "./Home/Navbar";
 import { WavyBackground } from "./Home/WavyBackground";
 import Logo from "./Home/Logo";
-import  Navbar  from "./Home/NavbarMenu";
+import  {Navbar}  from "./Home/NavbarMenu";
 import { Button, NextUIProvider, Slider } from "@nextui-org/react";
 import { ParallaxScroll } from "./Home/parallex-scroll";
 import { StickyScroll } from "./Home/sticky-scroll-reveal";
