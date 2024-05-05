@@ -17,13 +17,7 @@ function Landing() {
                     duration: 0.5, // Increase duration for smoother animation
                     y: -50,
                     ease: 'power2.out', // Use a smooth easing function
-                    // onComplete: () => {
-                    //     gsap.to(textref.current, {
-                    //         duration: 0.5, // Increase duration for smoother animation
-                    //         y: -100,
-                    //         ease: 'power2.out' // Use a smooth easing function
-                    //     });
-                    // }
+                   
                 });
             }
         });       
@@ -33,7 +27,7 @@ function Landing() {
             <img 
                 src="/About/1st.jpg" 
                 alt="car" 
-                className='w-[70%] h-[70%] absolute left-0 bottom-[-5%]' 
+                className='w-[70%] h-[70%] absolute left-0 bottom-[-5%] object-cover rounded-xl' 
                 ref={imgRef}
             />
             <div className='absolute right-[5%] bottom-[35%] text-white w-[30%] flex flex-col gap-3' ref={textref}>

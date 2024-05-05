@@ -26,6 +26,7 @@
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.5",
     "gsap": "^3.12.5",
+    "jquery": "^3.7.1",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.1.0",
     "react": "^18",

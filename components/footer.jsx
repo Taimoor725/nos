@@ -5,10 +5,10 @@ import { faFacebookF, faTwitter, faInstagram, faLinkedinIn, faYoutube } from '@f
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-black">
+    <footer className="bg-white text-black max-h-screen/2 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex justify-between mb-10">
-          <div className="flex items-center">
+        <div className="flex flex-col md:flex-row justify-between mb-10">
+          <div className="flex items-center mb-4 md:mb-0">
             <FontAwesomeIcon icon={faCar} className="text-3xl text-red-500 mr-2" />
             <span className="text-lg font-semibold">AUTOCENTER NIEDERBIPP AG</span>
           </div>
@@ -48,9 +48,9 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="mt-12 flex justify-between items-center">
-          <div>
-            <p>&copy; 2024 <a href="#">AUTOCENTER NIEDERBIPP AG</a>. All rights reserved</p>
+        <div className="mt-12 flex flex-col md:flex-row justify-between items-center">
+          <div className="mb-4 md:mb-0 md:order-2">
+            <p>&copy; {new Date().getFullYear()} <a href="#">AUTOCENTER NIEDERBIPP AG</a>. All rights reserved</p>
           </div>
           <div>
             <a href="#" className="mr-4">Privacy policy</a>
