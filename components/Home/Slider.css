@@ -1,0 +1,12 @@
+.carousel-item {
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .carousel-item.active {
+    opacity: 1;
+  }
+  
+  .carousel-item:not(.active) {
+    opacity: 0;
+  }
+  

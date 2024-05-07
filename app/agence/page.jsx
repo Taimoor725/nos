@@ -1,3 +1,4 @@
+"use client"
 import Logo from "@/components/Home/Logo";
 import { Navbar } from "@/components/Home/NavbarMenu";
 import React from "react";

@@ -1,31 +1,22 @@
 import React from "react";
-import ParticlesScene from "@/components/contact/particles";
-import Logo from "@/components/Home/Logo";
 import { Navbar } from "@/components/Home/NavbarMenu";
 import Footer from "@/components/footer";
-import { Button, Input } from "@nextui-org/react";
+import ContactUs from "@/components/contact/ContactUs"
+import ContactForm from "@/components/contact/ContactForm"
+import MapComponent from "@/components/contact/Map"
 
 const Page = () => {
   return (
-    <div className="w-screen h-screen bg-black">
-      <Logo />
+    <div className="w-screen h-auto bg-[#1F1B2D] flex flex-col">
       <Navbar />
-      <ParticlesScene />
-
-      <div className="flex w-screen absolute bottom-1/2 right-1/2 translate-x-1/2 translate-y-1/2 items-center justify-around">
-        <p className="text-5xl font-bold bg-gradient-to-r from-gray-200 to-gray-500 inline-block text-transparent bg-clip-text drop-shadow-md mb-4">
-          Let's work <br/> together
-        </p>
-        <div className="z-30  flex flex-col gap-8 text-white items-center justify-center ">
-          <Input placeholder="Name" className="" />
-          <Input placeholder="Email" className="" />
-          <Button>subscribe</Button>
-        </div>
+      <div className="flex w-full items-center gap-10 pt-52 pb-20">
+          <ContactUs/>
+          <ContactForm/>
       </div>
-      <div className=""></div>
-      <Footer className="absolute bottom-0"/>
+
     </div>
   );
 };
 
 export default Page;
+
