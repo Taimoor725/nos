@@ -16,7 +16,7 @@ const Filter = () => {
         </div>
       </div>
       <h1 className='text-white text-2xl font-extrabold p-5'>Popular Cars Types</h1>
-      <div className='grid grid-cols-2 pl-5 md:grid-cols-4 md:gap-4 md:pl-20'>
+      <div className='grid grid-cols-2 px-5 md:grid-cols-4 md:gap-4 md:px-12'>
         <CarCard src={"/sales/suv.svg"} name={"SUV"} />
         <CarCard src={"/sales/wagon.svg"} name={"WAGON"} />
         <CarCard src={"/sales/sedan.svg"} name={"SADAN"} />
