@@ -200,9 +200,13 @@ const Landing = () => {
     },
   ];
   
+  
+
+
   return (
-    <div className="overflow-x-hidden w-full">
-      <Suspense fallback={Loading}>
+    <NextUIProvider>
+    <section className="overflow-x-hidden w-full">
+      <Suspense fallback={<p>loading.......</p>}>
       <Navbar />
       <Logo />
       {/* <OptionsComponent/> */}
@@ -276,7 +280,8 @@ Rencontrez nos experts, une équipe diversifiée de professionnels passionnés p
       </div>
       <Footer />
       </Suspense>
-    </div>
+    </section>
+    </NextUIProvider>
   );
 };
 

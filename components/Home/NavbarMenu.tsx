@@ -73,11 +73,11 @@ export const Menu = ({
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
       className="relative rounded-full boder border-transparent dark:bg-[#00000040] dark:border-white/[0.2] bg-white shadow-input flex justify-center items-center space-x-4 py-4 backdrop-filter backdrop-blur-lg"
-    >
+    >   
         <Tooltip content="Home">
-        <button className="w-[10%] h-[95%]">
+        <Link href={"/home/"} className="w-[10%] h-[95%]">
         <img src="/logo.jpeg" alt="loading" className="w-full rounded-full object-cover"/>
-        </button>
+        </Link>
         </Tooltip>
       {children}
     </nav>
@@ -206,7 +206,7 @@ export function Navbar({ className }: { className?: string }) {
             />
             <ProductItem
               title="Contact us"
-              href="https://tailwindmasterkit.com"
+              href="/contact/"
               src="/images/articles/article_3.jpg"
               description="Maximize your online presence with digital marketing."
             />
