@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import { CarCard, Selection } from "@/components/accets/Selection"
 import { FontAwesomeIcon, faCar } from "@fortawesome/react-fontawesome"
@@ -5,8 +6,67 @@ import { FontAwesomeIcon, faCar } from "@fortawesome/react-fontawesome"
 const Filter = () => {
   return (
     <div>
-      <div className='p-5 md:block flex flex-col'>
-        <div className='w-full min-h-[7rem] items-center md:justify-end flex flex-col md:flex-row border-[0.5px] rounded-lg mt-32 gap-3 p-3 bg-gradient-to-br from-white'>
+      <div className='p-4 md:p-5 md:block gap-3 flex flex-col md:mt-32 md:min-h-[10rem] '>
+           <div className='flex gap-3'>
+                <><button id="btn">New
+                            <style jsx>{`button {
+  padding: 8px 16px; /* Smaller padding */
+  text-transform: uppercase;
+  border-radius: 6px; /* Smaller border radius */
+  font-size: 14px; /* Smaller font size */
+  font-weight: 500;
+  color: #ffffff80;
+  text-shadow: none;
+  background: linear-gradient(45deg, #ff9800, #ff5722); /* Orange gradient */
+  cursor: pointer;
+  border: none; /* Remove border */
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+button:hover,
+button:focus {
+  color: #ffffff;
+  background: #ff5722; /* Orange color */
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 5px #ff5722, 0 0 20px #ff5722, 0 0 50px #ff5722,
+    0 0 100px #ff5722;
+}
+`}
+
+                            </style>
+                        </button></>
+
+                <><button id="btn">Used
+                            <style jsx>{`button {
+  padding: 8px 16px; /* Smaller padding */
+  text-transform: uppercase;
+  border-radius: 6px; /* Smaller border radius */
+  font-size: 14px; /* Smaller font size */
+  font-weight: 500;
+  color: #ffffff80;
+  text-shadow: none;
+  background: linear-gradient(45deg, #ff9800, #ff5722); /* Orange gradient */
+  cursor: pointer;
+  border: none; /* Remove border */
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+button:hover,
+button:focus {
+  color: #ffffff;
+  background: #ff5722; /* Orange color */
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 5px #ff5722, 0 0 20px #ff5722, 0 0 50px #ff5722,
+    0 0 100px #ff5722;
+}
+`}
+
+                            </style>
+                        </button></>
+           </div> 
+        <div className='p-3 w-full h-auto items-center md:justify-end flex flex-col md:flex-row border-[0.5px] rounded-lg gap-3 md:p-3 bg-gradient-to-br from-transparent to-gray-200 opacity-1 md:mt-2'>
           <div className='w-full md:w-1/4'><Selection name={"Companies"} data={Companies} /></div>
           <div className='w-full md:w-1/4'><Selection name={"Model"} data={Models} /></div>
           <div className='w-full md:w-1/4'><Selection name={"Fuel"} data={Types} /></div>
@@ -26,12 +86,13 @@ const Filter = () => {
         <CarCard src={"/sales/crossover.svg"} name={"CROSSOVER"} />
         <CarCard src={"/sales/pickup.svg"} name={"PICKUP"} />
       </div>
-
     </div>
   );
 }
 
 export default Filter;
+
+
 
 
 const Companies = [

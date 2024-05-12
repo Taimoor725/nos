@@ -72,7 +72,7 @@ export function CarCard({name,src}) {
     width: 100%;
     height: 80px;
     max-width: 80px;
-    background: linear-gradient(90deg, #7eaaff 0%, #ff48fb 40%, rgba(0, 0, 0, 0.28) 60%);
+    background: linear-gradient(90deg, #1a1a1a 0%, #4d4d4d 40%, rgba(0, 0, 0, 0.28) 60%);
     border-radius: 100%;
     display: flex;
     justify-content: center;
