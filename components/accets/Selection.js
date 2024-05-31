@@ -14,9 +14,14 @@ export function Selection({name, data}) {
   };
 
   return (
-    <Box sx={{ minWidth: 120, borderRadius:"5px", backgroundColor: "white" }}>
+    <Box sx={{ 
+      minWidth: { xs: '100%', md: 120 },
+      maxWidth: { xs: '100%', md: 200 }, 
+      borderRadius: "5px", 
+      backgroundColor: "white" 
+    }}>
       <FormControl fullWidth >
-        <InputLabel id="demo-simple-select-label" className='text-gray-500 hover:text-white'><div className='flex'>  {name} </div></InputLabel>
+        <InputLabel id="demo-simple-select-label" className='text-black'><div className='flex'>  {name} </div></InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
@@ -38,9 +43,9 @@ export function Selection({name, data}) {
 
 
 
-export function CarCard({name,src}) {
+export function CarCard({name,src,onClick}) {
   return(
-    <div className="card">
+    <div className="card" onClick={onClick}>
   <div className="icon">
     <img src={src} alt="loading" />
   </div>
@@ -133,8 +138,8 @@ export function CarCard({name,src}) {
 
   @media (max-width: 640px) {
     .card {
-      max-width: 140px;
-      min-width: 100px;
+      max-width: 170px;
+      min-width: 150px;
       height: 200px;
       font-size: 14px;
     }
@@ -150,7 +155,39 @@ export function CarCard({name,src}) {
       height: 60px;
       max-width: 60px;
     }
-  }`}</style>
+  }
+
+
+
+  @media (max-width: 800px) {
+    .card {
+      max-width: 250px;
+      min-width: 200px;
+      height: 240px;
+      font-size: 14px;
+    }
+    .card:hover{
+      height:260px
+    }
+    .card .title,
+    .card .text {
+      font-size: 10px;
+    }
+
+    .icon {
+      height: 60px;
+      max-width: 60px;
+    }
+  }
+    
+  `}
+  
+
+  
+  
+  
+  
+  </style>
 
 
 </div>

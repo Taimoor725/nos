@@ -1,4 +1,4 @@
-import {Navbar} from '@/components/Home/NavbarMenu'
+import Navbar from '@/components/Home/Navbar'
 import React from 'react'
 import Filter from '@/components/sales/Filter'
 

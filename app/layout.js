@@ -22,10 +22,10 @@ export default function RootLayout({ children }) {
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossOrigin="anonymous"
         />
-       
+
       </Head>
       <body className={inter.className}>
-      <script
+        <script
           src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
           integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
           crossOrigin="anonymous"
@@ -43,6 +43,8 @@ export default function RootLayout({ children }) {
         <Suspense fallback={Loading}>
           {children}
         </Suspense>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
       </body>
     </html>
   );

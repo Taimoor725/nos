@@ -1,91 +1,47 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import { CarCard, Selection } from "@/components/accets/Selection"
-import { FontAwesomeIcon, faCar } from "@fortawesome/react-fontawesome"
+import ImageSlider from '@/components/accets/ImageSlider';
+import { useRouter } from 'next/navigation';
+import AllCars from '@/components/sales/AllCars'
+
 
 const Filter = () => {
+  const [cardActive,setCardActive]=useState(true);
+  const [car,setCar]=useState([false,false,false,false,false,false,false,false])
   return (
     <div>
-      <div className='p-4 md:p-5 md:block gap-3 flex flex-col md:mt-32 md:min-h-[10rem] '>
-           <div className='flex gap-3'>
-                <><button id="btn">New
-                            <style jsx>{`button {
-  padding: 8px 16px; /* Smaller padding */
-  text-transform: uppercase;
-  border-radius: 6px; /* Smaller border radius */
-  font-size: 14px; /* Smaller font size */
-  font-weight: 500;
-  color: #ffffff80;
-  text-shadow: none;
-  background: linear-gradient(45deg, #ff9800, #ff5722); /* Orange gradient */
-  cursor: pointer;
-  border: none; /* Remove border */
-  transition: 0.5s ease;
-  user-select: none;
-}
-
-button:hover,
-button:focus {
-  color: #ffffff;
-  background: #ff5722; /* Orange color */
-  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-  box-shadow: 0 0 5px #ff5722, 0 0 20px #ff5722, 0 0 50px #ff5722,
-    0 0 100px #ff5722;
-}
-`}
-
-                            </style>
-                        </button></>
-
-                <><button id="btn">Used
-                            <style jsx>{`button {
-  padding: 8px 16px; /* Smaller padding */
-  text-transform: uppercase;
-  border-radius: 6px; /* Smaller border radius */
-  font-size: 14px; /* Smaller font size */
-  font-weight: 500;
-  color: #ffffff80;
-  text-shadow: none;
-  background: linear-gradient(45deg, #ff9800, #ff5722); /* Orange gradient */
-  cursor: pointer;
-  border: none; /* Remove border */
-  transition: 0.5s ease;
-  user-select: none;
-}
-
-button:hover,
-button:focus {
-  color: #ffffff;
-  background: #ff5722; /* Orange color */
-  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-  box-shadow: 0 0 5px #ff5722, 0 0 20px #ff5722, 0 0 50px #ff5722,
-    0 0 100px #ff5722;
-}
-`}
-
-                            </style>
-                        </button></>
-           </div> 
-        <div className='p-3 w-full h-auto items-center md:justify-end flex flex-col md:flex-row border-[0.5px] rounded-lg gap-3 md:p-3 bg-gradient-to-br from-transparent to-gray-200 opacity-1 md:mt-2'>
-          <div className='w-full md:w-1/4'><Selection name={"Companies"} data={Companies} /></div>
-          <div className='w-full md:w-1/4'><Selection name={"Model"} data={Models} /></div>
-          <div className='w-full md:w-1/4'><Selection name={"Fuel"} data={Types} /></div>
-          <div className='w-full md:w-1/4'><Selection name={"Drive Type"} data={driveTypes} /></div>
-          <div className='w-full md:w-1/4'><Selection name={"Gear Type"} data={gearTypes} /></div>
-          <div className='w-full md:w-1/4'><Selection name={"Construction"} data={construction} /></div>
+      <div className='relative md:p-5 md:block gap-3 flex flex-col md:min-h-[10rem] '>
+          <ImageSlider/>
+        <div className='md:absolute md:w-[85%] w-[95%] m-[10px] bottom-10 left-[50%] md:translate-x-[-50%] md:z-10 bg-white md:border-t-8  md:border-white  md:border-t-[#0C0C14] rounded-[20px]'>
+          <div className='relative p-3 w-full h-auto items-center md:justify-end flex flex-col md:flex-row border-[0.5px]  gap-3 md:gap-4'>
+            <div className='w-full md:w-1/4'><Selection name={"Companies"} data={Companies} /></div>
+            <div className='w-full md:w-1/4'><Selection name={"Model"} data={Models} /></div>
+            <div className='w-full md:w-1/4'><Selection name={"Fuel"} data={Types} /></div>
+            <div className='w-full md:w-1/4'><Selection name={"Drive Type"} data={driveTypes} /></div>
+            <div className='w-full md:w-1/4'><Selection name={"Gear Type"} data={gearTypes} /></div>
+            <div className='w-full md:w-1/4'><Selection name={"Construction"} data={construction} /></div>
+          </div>
         </div>
       </div>
       <h1 className='text-white text-2xl font-extrabold p-5'>Popular Cars Types</h1>
-      <div className='grid grid-cols-2 px-5 md:grid-cols-4 md:gap-4 md:px-12'>
-        <CarCard src={"/sales/suv.svg"} name={"SUV"} />
-        <CarCard src={"/sales/wagon.svg"} name={"WAGON"} />
-        <CarCard src={"/sales/sedan.svg"} name={"SADAN"} />
-        <CarCard src={"/sales/compact.svg"} name={"COMPACT"} />
-        <CarCard src={"/sales/convertible.svg"} name={"CONVERTIBLE"} />
-        <CarCard src={"/sales/coupe.svg"} name={"COUPE"} />
-        <CarCard src={"/sales/crossover.svg"} name={"CROSSOVER"} />
-        <CarCard src={"/sales/pickup.svg"} name={"PICKUP"} />
-      </div>
+      {cardActive && (
+        <div className='grid grid-cols-2 px-1 md:grid-cols-4 md:gap-4 md:px-12'>
+          <CarCard src={"/sales/suv.svg"} name={"SUV"} onClick={() => {setCardActive(false);setCar([true,false,false,false,false,false,false,false])}} />
+          <CarCard src={"/sales/wagon.svg"} name={"WAGON"} onClick={() => setCardActive(false)} />
+          <CarCard src={"/sales/sedan.svg"} name={"SADAN"} onClick={() => setCardActive(false)} />
+          <CarCard src={"/sales/compact.svg"} name={"COMPACT"} onClick={() => setCardActive(false)} />
+          <CarCard src={"/sales/convertible.svg"} name={"CONVERTIBLE"} onClick={() => setCardActive(false)} />
+          <CarCard src={"/sales/coupe.svg"} name={"COUPE"} onClick={() => setCardActive(false)} />
+          <CarCard src={"/sales/crossover.svg"} name={"CROSSOVER"} onClick={() => setCardActive(false)} />
+          <CarCard src={"/sales/pickup.svg"} name={"PICKUP"} onClick={() => setCardActive(false)} />
+        </div>
+      )}
+
+        
+      {car[0] && (
+        <AllCars/>
+      )}
     </div>
   );
 }

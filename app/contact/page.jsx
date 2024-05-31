@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "@/components/Home/NavbarMenu";
+import  Navbar  from "@/components/Home/Navbar";
 import Footer from "@/components/footer";
 import ContactUs from "@/components/contact/ContactUs"
 import ContactForm from "@/components/contact/ContactForm"
