@@ -1,4 +1,5 @@
 "use client";
+// evry thing is update now
 import React from "react";
 import { FloatingNav } from "./Home/Navbar";
 import { WavyBackground } from "./Home/WavyBackground";
