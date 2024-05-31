@@ -1,5 +1,6 @@
 "use client";
-// evry thing is update now
+// evry thing is update nowpnpm install --no-frozen-lockfile
+
 import React from "react";
 import { FloatingNav } from "./Home/Navbar";
 import { WavyBackground } from "./Home/WavyBackground";
