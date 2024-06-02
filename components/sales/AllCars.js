@@ -1,13 +1,26 @@
 import React from 'react'
 import SUV from '@/components/sales/SUV'
 
-
-function AllCars() {
+function AllCars({carData}) {
   return (
-    <div className='grid '>
-<SUV carName={'SUV 1'} src={'/sales/img_1.png'} price={'1000$'} dis={'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.'}/>
+    <div className='md:grid md:grid-cols-4 flex flex-col items-center px-4 gap-5' >
+      {carData.map((car, index) => (
+        <SUV
+          key={index}
+          carName={car.carName}
+          src={car.src}
+          price={car.price}
+          dis={car.dis}
+          model={car.model}
+          tunning={car.lastRepair}
+        />
+      ))}
     </div>
-  )
-  }
+  );
+}
 
-export default AllCars
+export default AllCars;
+
+
+
+ 

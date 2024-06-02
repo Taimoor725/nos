@@ -1,65 +1,83 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faInfoCircle, faEnvelope, faCog, faShoppingCart, faCar, faUsers, faFileAlt } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookF, faTwitter, faInstagram, faLinkedinIn, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { FaFacebook, FaTwitter, FaLinkedin, FaPinterest } from 'react-icons/fa';
+import './Footer.css'; // Assuming you save the CSS as Footer.css
 
-const Footer = () => {
+function Footer() {
   return (
-    <footer className="bg-white text-black max-h-screen/2 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-col md:flex-row justify-between mb-10">
-          <div className="flex items-center mb-4 md:mb-0">
-            <FontAwesomeIcon icon={faCar} className="text-3xl text-red-500 mr-2" />
-            <span className="text-lg font-semibold">AUTOCENTER NIEDERBIPP AG</span>
-          </div>
-          <div className="flex space-x-4">
-            <a href="#" className="text-xl"><FontAwesomeIcon icon={faFacebookF} /></a>
-            <a href="#" className="text-xl"><FontAwesomeIcon icon={faTwitter} /></a>
-            <a href="#" className="text-xl"><FontAwesomeIcon icon={faInstagram} /></a>
-            <a href="#" className="text-xl"><FontAwesomeIcon icon={faLinkedinIn} /></a>
-            <a href="#" className="text-xl"><FontAwesomeIcon icon={faYoutube} /></a>
+    <footer className="new_footer_area bg_color max-h-screen mt-[2rem]">
+      <div className="new_footer_top relative">
+        <p className='w-full flex px-5 absolute top-[5%] text-2xl font-extrabold'>Logo</p>
+        <div className="container ">
+          <div className="row ">
+            <div className="col-lg-3 col-md-6 ">
+              <div className="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style={{ visibility: 'visible', animationDelay: '0.2s', animationName: 'fadeInLeft' }}>
+                <h3 className="f-title f_600 t_color f_size_18">Get in Touch</h3>
+                <p>Don’t miss any updates of our new templates and extensions.!</p>
+                <form action="#" className="f_subscribe_two mailchimp" method="post" novalidate="true">
+                  <input type="text" name="EMAIL" className="form-control memail" placeholder="Email" />
+                  <p className="mchimp-errmessage" style={{ display: 'none' }}></p>
+                  <p className="mchimp-sucmessage" style={{ display: 'none' }}></p>
+                </form>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6">
+              <div className="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style={{ visibility: 'visible', animationDelay: '0.4s', animationName: 'fadeInLeft' }}>
+                <h3 className="f-title f_600 t_color f_size_18">Download</h3>
+                <ul className="list-unstyled f_list">
+                  <li><a href="#">Company</a></li>
+                  <li><a href="#">Android App</a></li>
+                  <li><a href="#">ios App</a></li>
+                  <li><a href="#">Desktop</a></li>
+                  <li><a href="#">Projects</a></li>
+                  <li><a href="#">My tasks</a></li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6">
+              <div className="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style={{ visibility: 'visible', animationDelay: '0.6s', animationName: 'fadeInLeft' }}>
+                <h3 className="f-title f_600 t_color f_size_18">Help</h3>
+                <ul className="list-unstyled f_list">
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Term &amp; conditions</a></li>
+                  <li><a href="#">Reporting</a></li>
+                  <li><a href="#">Documentation</a></li>
+                  <li><a href="#">Support Policy</a></li>
+                  <li><a href="#">Privacy</a></li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6">
+              <div className="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style={{ visibility: 'visible', animationDelay: '0.8s', animationName: 'fadeInLeft' }}>
+                <h3 className="f-title f_600 t_color f_size_18">Team Solutions</h3>
+                <div className="f_social_icon">
+                  <a href="#" className="fab fa-facebookflex justify-center items-center "><FaFacebook /></a>
+                  <a href="#" className="fab fa-twitter"><FaTwitter /></a>
+                  <a href="#" className="fab fa-linkedin"><FaLinkedin /></a>
+                  <a href="#" className="fab fa-pinterest"><FaPinterest /></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <div className="space-y-4">
-            <h2 className="text-lg font-semibold">Company</h2>
-            <ul>
-              <li><a href="#"><FontAwesomeIcon icon={faHome} /> Home</a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faInfoCircle} /> About us</a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faEnvelope} /> Contact us</a></li>
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <h2 className="text-lg font-semibold">Services</h2>
-            <ul>
-              <li><a href="#"><FontAwesomeIcon icon={faCog} /> Maintenance</a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faShoppingCart} /> Buy a car</a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faCar} /> Rent a car</a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faUsers} /> Test drives</a></li>
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <h2 className="text-lg font-semibold">Resources</h2>
-            <ul>
-              <li><a href="#"><FontAwesomeIcon icon={faFileAlt} /> FAQs</a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faFileAlt} /> Blog</a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faFileAlt} /> Gallery</a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faFileAlt} /> Testimonials</a></li>
-            </ul>
-          </div>
+        <div className="footer_bg">
+          <div className="footer_bg_one"></div>
+          <div className="footer_bg_two"></div>
         </div>
-        <div className="mt-12 flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0 md:order-2">
-            <p>&copy; {new Date().getFullYear()} <a href="#">AUTOCENTER NIEDERBIPP AG</a>. All rights reserved</p>
-          </div>
-          <div>
-            <a href="#" className="mr-4">Privacy policy</a>
-            <a href="#">Terms & condition</a>
+      </div>
+      <div className="footer_bottom">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-6 col-sm-7">
+              <p className="mb-0 f_400">© AUTOCENTER NIEDERBIPP AG All rights reserved.</p>
+            </div>
+            <div className="col-lg-6 col-sm-5 text-right">
+              {/* <p>Made with <i className="icon_heart"></i> in <a href="http://cakecounter.com" target="_blank">CakeCounter</a></p> */}
+            </div>
           </div>
         </div>
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

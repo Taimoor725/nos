@@ -139,7 +139,7 @@ export function CarCard({name,src,onClick}) {
   @media (max-width: 640px) {
     .card {
       max-width: 170px;
-      min-width: 150px;
+      min-width: 120px;
       height: 200px;
       font-size: 14px;
     }

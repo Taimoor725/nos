@@ -4,6 +4,7 @@ import Head from "next/head";
 import "./globals.css";
 import { Suspense } from "react";
 import Loading from "@/app/loading";
+import Footer from '@/components/footer';
 
 const inter = Inter({ subsets: ["latin"] });
 

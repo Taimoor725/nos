@@ -3,16 +3,25 @@ import React, { useState } from 'react';
 import { CarCard, Selection } from "@/components/accets/Selection"
 import ImageSlider from '@/components/accets/ImageSlider';
 import { useRouter } from 'next/navigation';
-import AllCars from '@/components/sales/AllCars'
+import AllCars from '@/components/sales/AllCars';
+import { Pagination } from "@nextui-org/react";
+import Footer from '../footer';
 
 
 const Filter = () => {
-  const [cardActive,setCardActive]=useState(true);
-  const [car,setCar]=useState([false,false,false,false,false,false,false,false])
+  const [cardActive, setCardActive] = useState(true);
+  const [car, setCar] = useState([false, false, false, false, false, false, false, false])
+
+
+
+  const [postPerPage, setPostPerPage] = useState(8);
+  const [currentPage, setCurrentPage] = useState(1);
+  let lastPostIndex = currentPage * postPerPage;
+  let firstPostIndex = lastPostIndex - postPerPage;
   return (
     <div>
       <div className='relative md:p-5 md:block gap-3 flex flex-col md:min-h-[10rem] '>
-          <ImageSlider/>
+        <ImageSlider />
         <div className='md:absolute md:w-[85%] w-[95%] m-[10px] bottom-10 left-[50%] md:translate-x-[-50%] md:z-10 bg-white md:border-t-8  md:border-white  md:border-t-[#0C0C14] rounded-[20px]'>
           <div className='relative p-3 w-full h-auto items-center md:justify-end flex flex-col md:flex-row border-[0.5px]  gap-3 md:gap-4'>
             <div className='w-full md:w-1/4'><Selection name={"Companies"} data={Companies} /></div>
@@ -24,31 +33,162 @@ const Filter = () => {
           </div>
         </div>
       </div>
-      <h1 className='text-white text-2xl font-extrabold p-5'>Popular Cars Types</h1>
+      <div className='text-white text-2xl font-extrabold p-5 flex w-full'>
+        Popular Cars Types
+        {(car[0] || car[1] || car[2] || car[3] || car[4] || car[5] || car[6] || car[7]) && (
+          <div className='flex flex-grow justify-end'>
+            <button
+              className='flex justify-center items-center carBTN md:w-[8rem] w-[5rem] text-xs max-h-[2rem] md:p-3 bg-gradient-to-tr from-orange-600 to-orange-400 md:text-sm rounded-lg '
+              onClick={() => {
+                setCardActive(true);
+                setCar([false, false, false, false, false, false, false, false]);
+              }}
+            > 
+              GO BACK
+            </button>
+          </div>
+        )}
+      </div>
       {cardActive && (
         <div className='grid grid-cols-2 px-1 md:grid-cols-4 md:gap-4 md:px-12'>
-          <CarCard src={"/sales/suv.svg"} name={"SUV"} onClick={() => {setCardActive(false);setCar([true,false,false,false,false,false,false,false])}} />
-          <CarCard src={"/sales/wagon.svg"} name={"WAGON"} onClick={() => setCardActive(false)} />
-          <CarCard src={"/sales/sedan.svg"} name={"SADAN"} onClick={() => setCardActive(false)} />
-          <CarCard src={"/sales/compact.svg"} name={"COMPACT"} onClick={() => setCardActive(false)} />
-          <CarCard src={"/sales/convertible.svg"} name={"CONVERTIBLE"} onClick={() => setCardActive(false)} />
-          <CarCard src={"/sales/coupe.svg"} name={"COUPE"} onClick={() => setCardActive(false)} />
-          <CarCard src={"/sales/crossover.svg"} name={"CROSSOVER"} onClick={() => setCardActive(false)} />
-          <CarCard src={"/sales/pickup.svg"} name={"PICKUP"} onClick={() => setCardActive(false)} />
+          <CarCard src={"/sales/suv.svg"} name={"SUV"} onClick={() => { setCardActive(false); setCar([true, false, false, false, false, false, false, false]) }} />
+          <CarCard src={"/sales/wagon.svg"} name={"WAGON"} onClick={() => { setCardActive(false); setCar([false,true, false, false, false, false, false, false]) } }/>
+          <CarCard src={"/sales/sedan.svg"} name={"SADAN"} onClick={() => { setCardActive(false); setCar([false, false,true,false, false, false, false, false]) }} />
+          <CarCard src={"/sales/compact.svg"} name={"COMPACT"} onClick={() => { setCardActive(false); setCar([false, false, false, true, false, false, false, false]) }} />
+          <CarCard src={"/sales/convertible.svg"} name={"CONVERTIBLE"} onClick={() => { setCardActive(false); setCar([false, false, false, false, true, false, false, false]) }} />
+          <CarCard src={"/sales/coupe.svg"} name={"COUPE"} onClick={() => { setCardActive(false); setCar([false, false, false, false, false, true, false, false]) }} />
+          <CarCard src={"/sales/crossover.svg"} name={"CROSSOVER"} onClick={() => { setCardActive(false); setCar([false, false, false, false, false, false, true, false]) }} />
+          <CarCard src={"/sales/pickup.svg"} name={"PICKUP"} onClick={() => { setCardActive(false); setCar([false, false, false, false, false, false, false, true]) }} />
         </div>
       )}
 
-        
-      {car[0] && (
-        <AllCars/>
+
+      {car[0] && (<>
+        <AllCars carData={SUVdata.slice(firstPostIndex, lastPostIndex)}/>
+        <div className='w-full flex justify-center items-center pt-2 md:h-[3.5rem] '>
+          <div className="flex flex-wrap gap-4 items-center">
+            <Pagination total={10} initialPage={1} color={"warning"} onChange={(page) => setCurrentPage(page)} />
+          </div>
+        </div>
+      </>
       )}
+
+      {car[1] && (<>
+        <AllCars carData={WAGANdata.slice(firstPostIndex, lastPostIndex)} />
+        <div className='w-full flex justify-center items-center pt-2 md:h-[3.5rem] '>
+          <div className="flex flex-wrap gap-4 items-center">
+            <Pagination total={10} initialPage={1} color={"warning"} onChange={(page) => setCurrentPage(page)} />
+          </div>
+        </div>
+      </>
+      )}
+
+      {car[2] && (<>
+        <AllCars carData={SUVdata.slice(firstPostIndex, lastPostIndex)} />
+        <div className='w-full flex justify-center items-center pt-2 md:h-[3.5rem] '>
+          <div className="flex flex-wrap gap-4 items-center">
+            <Pagination total={10} initialPage={1} color={"warning"} onChange={(page) => setCurrentPage(page)} />
+          </div>
+        </div>
+      </>
+      )}
+
+      {car[3] && (<>
+        <AllCars carData={SUVdata.slice(firstPostIndex, lastPostIndex)} />
+        <div className='w-full flex justify-center items-center pt-2 md:h-[3.5rem] '>
+          <div className="flex flex-wrap gap-4 items-center">
+            <Pagination total={10} initialPage={1} color={"warning"} onChange={(page) => setCurrentPage(page)} />
+          </div>
+        </div>
+      </>
+      )}
+
+      {car[4] && (<>
+        <AllCars carData={SUVdata.slice(firstPostIndex, lastPostIndex)} />
+        <div className='w-full flex justify-center items-center pt-2 md:h-[3.5rem] '>
+          <div className="flex flex-wrap gap-4 items-center">
+            <Pagination total={10} initialPage={1} color={"warning"} onChange={(page) => setCurrentPage(page)} />
+          </div>
+        </div>
+      </>
+      )}
+
+      {car[5] && (<>
+        <AllCars carData={SUVdata.slice(firstPostIndex, lastPostIndex)} />
+        <div className='w-full flex justify-center items-center pt-2 md:h-[3.5rem] '>
+          <div className="flex flex-wrap gap-4 items-center">
+            <Pagination total={10} initialPage={1} color={"warning"} onChange={(page) => setCurrentPage(page)} />
+          </div>
+        </div>
+      </>
+      )}
+
+      {car[6] && (<>
+        <AllCars carData={SUVdata.slice(firstPostIndex, lastPostIndex)} />
+        <div className='w-full flex justify-center items-center pt-2 md:h-[3.5rem] '>
+          <div className="flex flex-wrap gap-4 items-center">
+            <Pagination total={10} initialPage={1} color={"warning"} onChange={(page) => setCurrentPage(page)} />
+          </div>
+        </div>
+      </>
+      )}
+
+      {car[7] && (<>
+        <AllCars carData={SUVdata.slice(firstPostIndex, lastPostIndex)} />
+        <div className='w-full flex justify-center items-center pt-2 md:h-[3.5rem] '>
+          <div className="flex flex-wrap gap-4 items-center">
+            <Pagination total={10} initialPage={1} color={"warning"} onChange={(page) => setCurrentPage(page)} />
+          </div>
+        </div>
+      </>
+      )}
+
+      <Footer />
     </div>
+
   );
 }
 
 export default Filter;
 
 
+
+
+
+
+const WAGANdata = [
+  { carName: 'WAGAN 8', src: '/sales/WAGAN/5d4eb686-487f-4322-88ca-d015d5bb0df8.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.',model:'2017',lastRepair:'2 Month ago'},
+  { carName: 'WAGAN 7', src: '/sales/WAGAN/96548bd5-fb31-4570-b31a-517e2ebe5408.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.',model:'2002',lastRepair:'2 Month ago' },
+  { carName: 'WAGAN 6', src: '/sales/WAGAN/wagan_1.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.',model:'2014',lastRepair:'2 Month ago'},
+  { carName: 'WAGAN 5', src: '/sales/WAGAN/wagan_2.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.',model:'2011' ,lastRepair:'2 Month ago'},
+  { carName: 'WAGAN 4', src: '/sales/img_4.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.',model:'2011' ,lastRepair:'2 Month ago'},
+  { carName: 'WAGAN 3', src: '/sales/img_3.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.',model:'2010' ,lastRepair:'2 Month ago'},
+  { carName: 'WAGAN 2', src: '/sales/img_2.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.',model:'2005' ,lastRepair:'2 Month ago'},
+  { carName: 'WAGAN 1', src: '/sales/img_1.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.',model:'2015' ,lastRepair:'2 Month ago'},
+  { carName: 'WAGAN 8', src: '/sales/img_1.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.',model:'1990' ,lastRepair:'2 Month ago'},
+  { carName: 'WAGAN 7', src: '/sales/img_3.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.',model:'2000' ,lastRepair:'2 Month ago'},
+  { carName: 'WAGAN 6', src: '/sales/img_2.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.',model:'2010', lastRepair:'2 Month ago'},
+  { carName: 'WAGAN 5', src: '/sales/img_1.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.',model:'2022' ,lastRepair:'2 Month ago'},
+  { carName: 'WAGAN 4', src: '/sales/img_4.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.',model:'2024' ,lastRepair:'2 Month ago'},
+  { carName: 'WAGAN 3', src: '/sales/img_3.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.',model:'2020' ,lastRepair:'2 Month ago'},
+];
+
+const SUVdata = [
+  { carName: 'SUV 8', src: '/sales/img_1.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.' ,model:'1990',lastRepair:'2 Month ago'},
+  { carName: 'SUV 7', src: '/sales/img_3.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.' ,model:'2002',lastRepair:'2 Month ago'},
+  { carName: 'SUV 6', src: '/sales/img_2.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.' ,model:'2021',lastRepair:'2 Month ago'},
+  { carName: 'SUV 5', src: '/sales/img_1.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.' ,model:'2020',lastRepair:'2 Month ago'},
+  { carName: 'SUV 4', src: '/sales/img_4.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.' ,model:'2020',lastRepair:'2 Month ago'},
+  { carName: 'SUV 3', src: '/sales/img_3.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.' ,model:'2022',lastRepair:'2 Month ago'},
+  { carName: 'SUV 2', src: '/sales/img_2.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.' ,model:'2010',lastRepair:'2 Month ago'},
+  { carName: 'SUV 1', src: '/sales/img_1.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.' ,model:'2023',lastRepair:'2 Month ago'},
+  { carName: 'SUV 8', src: '/sales/img_1.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.' ,model:'2024',lastRepair:'2 Month ago'},
+  { carName: 'SUV 7', src: '/sales/img_3.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.' ,model:'2020',lastRepair:'2 Month ago'},
+  { carName: 'SUV 6', src: '/sales/img_2.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.' ,model:'2017',lastRepair:'2 Month ago'},
+  { carName: 'SUV 5', src: '/sales/img_1.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.' ,model:'2014',lastRepair:'2 Month ago'},
+  { carName: 'SUV 4', src: '/sales/img_4.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.' ,model:'2010',lastRepair:'2 Month ago'},
+  { carName: 'SUV 3', src: '/sales/img_3.png', price: '1000$', dis: 'Lorem  voluptates sequi debitis ad, nobis commodi voluptatem  beatae quae impedit porro tempore.' ,model:'2000',lastRepair:'2 Month ago'},
+];
 
 
 const Companies = [
