@@ -42,7 +42,7 @@
     "styled-components": "^6.1.9",
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.3",
-    "three": "^0.121.0"
+    "three": "^0.165.0"
   },
   "devDependencies": {
     "@types/node": "20.11.19",
