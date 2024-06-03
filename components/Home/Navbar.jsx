@@ -14,50 +14,50 @@ function Navbar() {
 
         <ul>
           <li className={`${active[0]}`} onClick={() => setActive(['active', "", "", ""])}>
-            <a href="#">
+            <Link href="/home/">
               <span className='icon'>
                 <ion-icon name="car-sport-outline"></ion-icon>
               </span>
               <span className='text'>Home</span>
-            </a>
+            </Link>
           </li>
 
           <li className={`${active[1]}`} onClick={() => setActive(["", "active", "", "", ""])}>
-            <a href="#">
+            <Link href="/sales/">
               <span className='icon'>
                 <ion-icon name="stats-chart-outline"></ion-icon>
               </span>
               <span className='text'>Sales</span>
-            </a>
+            </Link>
           </li>
 
           <li className={`${active[2]}`} onClick={() => setActive(["", "", "active", "", ""])}>
-            <a href="#">
+            <Link href="#">
               <span className='icon'>
                 <ion-icon name="construct-outline"></ion-icon>
               </span>
               <span className='text'>Corrosion</span>
-            </a>
+            </Link>
           </li>
 
 
           <li className={`${active[3]}`} onClick={() => setActive(["", "", "", "active", ""])}>
-            <a href="#">
+            <Link href="/about/">
               <span className='icon'>
                 <ion-icon name="happy-outline"></ion-icon>
               </span>
               <span className='text'>About</span>
-            </a>
+            </Link>
           </li>
 
 
           <li className={`${active[4]}`} onClick={() => setActive(["", "", "", "", "active"])}>
-            <a href="#">
+            <Link href="/contact/">
               <span className='icon'>
                 <ion-icon name="chatbubble-outline"></ion-icon>
               </span>
               <span className='text'>Contact</span>
-            </a>
+            </Link>
           </li>
           <div className='indicator'></div>
         </ul>

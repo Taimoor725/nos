@@ -6,7 +6,7 @@ import Intro from '@/components/about/Intro'
 function page() {
   return (
     <div className='w-screen h-auto overflow-x-hidden bg-[#0C0C14]'>
-      <Navbar/>
+      {/* <Navbar/> */}
       <Landing/>
       <Intro/>
     </div>

@@ -2,9 +2,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
+import dynamic from 'next/dynamic';
 import { Suspense } from "react";
 import Loading from "@/app/loading";
-import Footer from '@/components/footer';
+
+const Navbar = dynamic(() => import('@/components/Home/Navbar'), { ssr: false });
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,9 +25,10 @@ export default function RootLayout({ children }) {
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossOrigin="anonymous"
         />
-
       </Head>
       <body className={inter.className}>
+        <Navbar />
+        {children}
         <script
           src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
           integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -41,9 +44,6 @@ export default function RootLayout({ children }) {
           integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
           crossOrigin="anonymous"
         ></script>
-        <Suspense fallback={Loading}>
-          {children}
-        </Suspense>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
       </body>

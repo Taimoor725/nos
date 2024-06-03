@@ -1,111 +1,200 @@
-"use client"
-import { NextUIProvider, Spinner } from "@nextui-org/react";
+// components/LoadingScreen.js
 import React from "react";
 
 const Loading = () => {
-    return (
-        <div className="wrapper">
-    <div className="circle"></div>
-    <div className="circle"></div>
-    <div className="circle"></div>
-    <div className="shadow"></div>
-    <div className="shadow"></div>
-    <div className="shadow"></div>
-            <style jsx>{
-                `.wrapper {
-                    width: 200px;
-                    height: 60px;
-                    position: relative;
-                    z-index: 1;
-                  }
-                  
-                  .circle {
-                    width: 20px;
-                    height: 20px;
-                    position: absolute;
-                    border-radius: 50%;
-                    background-color: #fff;
-                    left: 15%;
-                    transform-origin: 50%;
-                    animation: circle7124 .5s alternate infinite ease;
-                  }
-                  
-                  @keyframes circle7124 {
-                    0% {
-                      top: 60px;
-                      height: 5px;
-                      border-radius: 50px 50px 25px 25px;
-                      transform: scaleX(1.7);
-                    }
-                  
-                    40% {
-                      height: 20px;
-                      border-radius: 50%;
-                      transform: scaleX(1);
-                    }
-                  
-                    100% {
-                      top: 0%;
-                    }
-                  }
-                  
-                  .circle:nth-child(2) {
-                    left: 45%;
-                    animation-delay: .2s;
-                  }
-                  
-                  .circle:nth-child(3) {
-                    left: auto;
-                    right: 15%;
-                    animation-delay: .3s;
-                  }
-                  
-                  .shadow {
-                    width: 20px;
-                    height: 4px;
-                    border-radius: 50%;
-                    background-color: rgba(0,0,0,0.9);
-                    position: absolute;
-                    top: 62px;
-                    transform-origin: 50%;
-                    z-index: -1;
-                    left: 15%;
-                    filter: blur(1px);
-                    animation: shadow046 .5s alternate infinite ease;
-                  }
-                  
-                  @keyframes shadow046 {
-                    0% {
-                      transform: scaleX(1.5);
-                    }
-                  
-                    40% {
-                      transform: scaleX(1);
-                      opacity: .7;
-                    }
-                  
-                    100% {
-                      transform: scaleX(.2);
-                      opacity: .4;
-                    }
-                  }
-                  
-                  .shadow:nth-child(4) {
-                    left: 45%;
-                    animation-delay: .2s
-                  }
-                  
-                  .shadow:nth-child(5) {
-                    left: auto;
-                    right: 15%;
-                    animation-delay: .3s;
-                  }
-                  `
-            }
-    </style>
-</div>
+  return (
+		<div className="socket">
+    <div className="gel center-gel">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c1 r1">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c2 r1">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c3 r1">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c4 r1">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c5 r1">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c6 r1">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    
+    <div className="gel c7 r2">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    
+    <div className="gel c8 r2">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c9 r2">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c10 r2">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c11 r2">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c12 r2">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c13 r2">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c14 r2">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c15 r2">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c16 r2">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c17 r2">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c18 r2">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c19 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c20 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c21 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c22 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c23 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c24 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c25 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c26 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c28 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c29 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c30 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c31 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c32 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c33 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c34 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c35 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c36 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    <div className="gel c37 r3">
+      <div className="hex-brick h1"></div>
+      <div className="hex-brick h2"></div>
+      <div className="hex-brick h3"></div>
+    </div>
+    
+  </div>
 
-    );
+  );
 };
 
 export default Loading;

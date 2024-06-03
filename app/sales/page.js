@@ -3,11 +3,8 @@ import React from 'react'
 import Filter from '@/components/sales/Filter'
 
 function page() {
-  // ABC
-
   return (
     <div className='w-screen h-screen overflow-x-hidden bg-[#0C0C14] '>
-        <Navbar/>
         <Filter/>
 
     </div>

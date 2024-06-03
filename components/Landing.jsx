@@ -209,7 +209,7 @@ const Landing = () => {
     <NextUIProvider>
     <section className="overflow-x-hidden w-full">
       <Suspense fallback={<p>loading.......</p>}>
-      <Navbar />
+      {/* <Navbar /> */}
       <Logo />
       {/* <OptionsComponent/> */}
       <div className="w-screen h-screen relative">
@@ -239,7 +239,7 @@ const Landing = () => {
         </div>
         <video
           src="/videos/intro.mp4"
-          className="w-full h-full object-cover absolute"
+          className="w-full h-full object-cover"
           autoPlay
           muted
           loop
