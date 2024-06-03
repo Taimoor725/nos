@@ -32,7 +32,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "app/loading.jsx", "components/Home/NavbarMenu.tsx"  ],
+, "app/loading.jsx", "components/Home/Navbar.js"  ],
   "exclude": [
     "node_modules"
   ]

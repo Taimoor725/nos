@@ -39,6 +39,7 @@ function SUV({ carName, price, dis, src ,model,tunning}) {
 
   return (
     <div>
+    
       <CarCard carName={carName} price={price} dis={dis} src={src} onOpen={onOpen} />
       
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -64,9 +65,6 @@ function SUV({ carName, price, dis, src ,model,tunning}) {
             <Button color="danger" variant="light" onPress={onClose}>
               Close
             </Button>
-            {/* <Button color="primary" onPress={onClose}>
-              Action
-            </Button> */}
           </ModalFooter>
         </ModalContent>
       </Modal>

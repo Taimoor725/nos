@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { CarCard, Selection } from "@/components/accets/Selection"
 import ImageSlider from '@/components/accets/ImageSlider';
-import { useRouter } from 'next/navigation';
 import AllCars from '@/components/sales/AllCars';
 import { Pagination } from "@nextui-org/react";
 import Footer from '../footer';
@@ -14,7 +13,7 @@ const Filter = () => {
 
 
 
-  const [postPerPage, setPostPerPage] = useState(8);
+  const postPerPage = useState(8);
   const [currentPage, setCurrentPage] = useState(1);
   let lastPostIndex = currentPage * postPerPage;
   let firstPostIndex = lastPostIndex - postPerPage;

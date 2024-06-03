@@ -79,6 +79,7 @@ module.exports = {
       next: ["next"],
     },
   },
+  darkMode: "class",
   plugins: [
     require("@tailwindcss/aspect-ratio"),
     addVariablesForColors,
