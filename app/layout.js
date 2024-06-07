@@ -5,19 +5,26 @@ import "./globals.css";
 import dynamic from 'next/dynamic';
 import { Suspense } from "react";
 import Loading from "@/app/loading";
+import { Poppins } from 'next/font/google';
 
 const Navbar = dynamic(() => import('@/components/Home/Navbar'), { ssr: false });
 
-const inter = Inter({ subsets: ["latin"] });
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+});
 
 export const metadata = {
-  title: "Ferrari",
-  description: "Car agency",
-};
+  title: 'Page Title',
+  description: 'Page Description',
+}
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" >
       <Head>
         <link
           rel="stylesheet"
@@ -26,7 +33,7 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
         />
       </Head>
-      <body className={inter.className}>
+      <body className={`${poppins.variable}`}>
         <Navbar />
         {children}
         <script

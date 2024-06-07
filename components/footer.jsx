@@ -1,83 +1,152 @@
-import React from 'react';
-import { FaFacebook, FaTwitter, FaLinkedin, FaPinterest } from 'react-icons/fa';
-import './Footer.css'; // Assuming you save the CSS as Footer.css
+"use client"
+import React, { useState } from 'react';
+import "./Footer.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faTiktok, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 
-function Footer() {
+const Footer = () => {
   return (
-    <footer className="new_footer_area bg_color max-h-screen mt-[2rem]">
-      <div className="new_footer_top relative">
-        <p className='w-full flex px-5 absolute top-[5%] text-2xl font-extrabold'>Logo</p>
-        <div className="container ">
-          <div className="row ">
-            <div className="col-lg-3 col-md-6 ">
-              <div className="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style={{ visibility: 'visible', animationDelay: '0.2s', animationName: 'fadeInLeft' }}>
-                <h3 className="f-title f_600 t_color f_size_18">Get in Touch</h3>
-                <p>Don’t miss any updates of our new templates and extensions.!</p>
-                <form action="#" className="f_subscribe_two mailchimp" method="post" novalidate="true">
-                  <input type="text" name="EMAIL" className="form-control memail" placeholder="Email" />
-                  <p className="mchimp-errmessage" style={{ display: 'none' }}></p>
-                  <p className="mchimp-sucmessage" style={{ display: 'none' }}></p>
-                </form>
+    <div className='bg-black'>
+      <footer className="footer">
+        <div className='w-full p-4 text-2xl font-light flex justify-center items-end'>LOGO AND ADRESS</div>
+        <div className="container mt-12">
+          <div className="flex justify-around">
+            <div className=" text-center">
+              <h3>RACING</h3>
+              <ul className='flex flex-col gap-2 mt-5'>
+                <li>Scuderia Ferrari HP</li>
+                <li>Charles Leclero</li>
+                <li>Carlos Sainz</li>
+                <li>Hypercar</li>
+                <li>GT Series</li>
+              </ul>
+            </div>
+
+
+            <div className=" text-center">
+              <h3>SPORTS CARS</h3>
+              <ul className='flex flex-col gap-2 mt-5'>
+                <li>Range</li>
+                <li>Configure your Ferrari</li>
+                <li>MyFerrari</li>
+                <li>Pre-owned</li>
+                <li>Dealers</li>
+              </ul>
+            </div>
+            <div className=" text-center">
+              <h3>COLLECTIONS</h3>
+              <ul className='flex flex-col gap-2 mt-5'>
+                <li>Men</li>
+                <li>Women</li>
+                <li>Kids</li>
+                <li>Shoes</li>
+                <li>Eyewear</li>
+
+              </ul>
+            </div>
+            <div className=" text-center">
+              <h3>EXPERIENCES</h3>
+              <ul className='flex flex-col gap-2 mt-5'>
+                <li>Corse Clienti</li>
+                <li>Ferrari Esports Series</li>
+                <li>Ristorante Cavallino</li>
+                <li>Ferrari Museums</li>
+                <li>Ferrari World Abu Dhabi</li>
+              </ul>
+            </div>
+            <div className=" text-center">
+              <h3>ABOUT US</h3>
+              <ul className='flex flex-col gap-2 mt-5'>
+                <li>Corporate</li>
+                <li>Sustainability</li>
+                <li>Media Centre</li>
+                <li>News</li>
+                <li>Magazine</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div className='w-full h-[1px] bg-gray-600 mt-3'></div>
+      <div className='bg-black text-white mt-20 px-20'>
+        <SocialMedias />
+      </div>
+      <div className='w-full flex md:h-[10rem] justify-center items-center border-t-1 border-t-gray-600 mt-3 text-white'>
+          <div className=' w-2/3   text-xs text-center'>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, ullam inventore? Quidem unde repellendus non minima quis, exercitationem, possimus, cum dolor quaerat nobis nam dolores consequuntur beatae animi. Fugit ratione quae porro adipisci dignissimos dolor dolores, ullam officiis sit cum explicabo, commodi numquam asperiores alias inventore. Omnis voluptas impedit totam, dolore ipsam eligendi nulla sapiente corporis iusto magni qui optio possimus maiores, quod quas illo! Esse nisi ea repellat quia natus. Neque cum quae ipsa pariatur quis, tempora dolorem voluptatibus fugit saepe aperiam iure consequatur eum esse vel. Vero commodi mollitia et officia obcaecati totam provident cumque aperiam culpa cum?
+          </div>
+      </div>
+      <div className='w-full p-3 font-light text-xl text-white flex justify-center items-center'>LOGO</div>
+       
+    </div>
+  );
+};
+
+export default Footer;
+
+
+
+
+const SocialMedias = () => {
+  const [rotations, setRotations] = useState([false, false, false, false, false]);
+  const [clicked, setClicked] = useState([false, false, false, false, false]);
+
+  const data = [
+    { name: "FACEBOOK", src: <ion-icon name="logo-facebook" style={{ width: "24px", height: "24px" }}></ion-icon> },
+    { name: "INSTAGRAM", src: <ion-icon name="logo-instagram" style={{ width: "24px", height: "24px" }}></ion-icon> },
+    { name: "LINKEDIN", src: <FontAwesomeIcon icon={faLinkedin} style={{ width: "24px", height: "24px" }} /> },
+    { name: "TICTOK", src: <FontAwesomeIcon icon={faTiktok} style={{ width: "24px", height: "24px" }} /> },
+    { name: "X    ", src: <FontAwesomeIcon icon={faXTwitter} style={{ width: "24px", height: "24px" }} /> },
+  ];
+
+  const handleIconClick = (index) => {
+    setRotations(rotations.map((isRotated, i) => (i === index ? !isRotated : isRotated)));
+    setClicked(clicked.map((isClicked, j) => (j === index ? !isClicked : isClicked)));
+  };
+
+  return (
+    <div>
+      <div className='w-full grid grid-cols-4 gap-7'>
+        {data.map((value, index) => (
+          <div key={index} className='flex flex-col items-start gap-4 mb-4'>
+            <div className='flex items-center gap-16'>
+              <div className='flex gap-2'>
+                {value.src}
+                <p>{value.name}</p>
+              </div>
+              <div
+                onClick={() => handleIconClick(index)}
+                className={`flex justify-end w-[32px] h-[32px] items-center transition-transform transform ${rotations[index] ? '-rotate-45' : ''}`}
+              >
+                <ion-icon name="add-outline" style={{ width: '32px', height: '32px' }}></ion-icon>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6">
-              <div className="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style={{ visibility: 'visible', animationDelay: '0.4s', animationName: 'fadeInLeft' }}>
-                <h3 className="f-title f_600 t_color f_size_18">Download</h3>
-                <ul className="list-unstyled f_list">
-                  <li><a href="#">Company</a></li>
-                  <li><a href="#">Android App</a></li>
-                  <li><a href="#">ios App</a></li>
-                  <li><a href="#">Desktop</a></li>
-                  <li><a href="#">Projects</a></li>
-                  <li><a href="#">My tasks</a></li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <div className="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style={{ visibility: 'visible', animationDelay: '0.6s', animationName: 'fadeInLeft' }}>
-                <h3 className="f-title f_600 t_color f_size_18">Help</h3>
-                <ul className="list-unstyled f_list">
-                  <li><a href="#">FAQ</a></li>
-                  <li><a href="#">Term &amp; conditions</a></li>
-                  <li><a href="#">Reporting</a></li>
-                  <li><a href="#">Documentation</a></li>
-                  <li><a href="#">Support Policy</a></li>
-                  <li><a href="#">Privacy</a></li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-              <div className="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style={{ visibility: 'visible', animationDelay: '0.8s', animationName: 'fadeInLeft' }}>
-                <h3 className="f-title f_600 t_color f_size_18">Team Solutions</h3>
-                <div className="f_social_icon">
-                  <a href="#" className="fab fa-facebookflex justify-center items-center "><FaFacebook /></a>
-                  <a href="#" className="fab fa-twitter"><FaTwitter /></a>
-                  <a href="#" className="fab fa-linkedin"><FaLinkedin /></a>
-                  <a href="#" className="fab fa-pinterest"><FaPinterest /></a>
+            {/* Social media dropdown */}
+            
+            
+            <div
+              className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                clicked[index] ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
+              }`}
+            >
+              <div className=' rounded shadow-md'>
+                <div className='flex flex-col gap-2'>
+                  <a href="#">ABC</a>
+                  <a href="#">ABC Company</a>
+                  <a href="#">ABC Shows</a>
+                  <a href="#">ABC Events</a>
+                  <a href="#">ABC Network</a>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="footer_bg">
-          <div className="footer_bg_one"></div>
-          <div className="footer_bg_two"></div>
-        </div>
+        ))}
       </div>
-      <div className="footer_bottom">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6 col-sm-7">
-              <p className="mb-0 f_400">© AUTOCENTER NIEDERBIPP AG All rights reserved.</p>
-            </div>
-            <div className="col-lg-6 col-sm-5 text-right">
-              {/* <p>Made with <i className="icon_heart"></i> in <a href="http://cakecounter.com" target="_blank">CakeCounter</a></p> */}
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    </div>
   );
-}
+};
 
-export default Footer;
+
+
+
+

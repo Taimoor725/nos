@@ -51,32 +51,32 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-screen overflow-y-auto flex justify-center relative space-x-10  p-10 scrollba"
+      data-aos-offset="200" className="h-screen overflow-y-auto flex justify-center relative space-x-10  p-10 scrollba"
       ref={ref}
     >
-      <div className="div relative flex items-start px-4">
+      <div className="div relative flex items-start px-4" data-aos="fade-up">
         <div className="max-w-2xl">
           {content.map((item, index) => (
             <div key={item.title + index} className="my-20">
-              <motion.h2
+              <motion.h2 data-aos="zoom-in"  data-aos-delay="300"
                 initial={{
                   opacity: 0,
                 }}
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl font-bold text-slate-100"
+                className="text-2xl font-bold text-slate-100" 
               >
                 {item.title}
               </motion.h2>
-              <motion.div
+              <motion.div 
                 initial={{
                   opacity: 0,
                 }}
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className=" text-slate-300 max-w-sm mt-10 flex flex-col gap-2"
+                className=" text-slate-300 max-w-sm mt-10 flex flex-col gap-2" 
               >
                 {item.description}
                 <div><Button/></div>
