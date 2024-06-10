@@ -74,9 +74,9 @@ module.exports = {
           },
         },
       },
-    },
-    fontFamily: {
-      next: ["next"],
+      fontFamily: {
+        next: ["next"],
+      },
     },
   },
   darkMode: "class",
@@ -86,6 +86,7 @@ module.exports = {
      nextui(),
   ],
 };
+
 function addVariablesForColors({ addBase, theme }) {
   let allColors = flattenColorPalette(theme("colors"));
   let newVars = Object.fromEntries(

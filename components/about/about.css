@@ -1,0 +1,30 @@
+
+.picture {
+    object-position: center -5rem ; 
+    
+  }
+  
+.img{
+  object-position: center center;
+}
+
+
+
+
+
+  @media (max-width: 768px) {
+    .start{
+      background: url('/About/front (2).avif');
+    }
+    .picture {
+      object-position: center center; 
+      height: 100%;
+    }
+    .img{
+      object-position: center center;
+    }
+  }
+
+
+
+  

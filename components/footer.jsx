@@ -6,62 +6,63 @@ import { faLinkedin, faTiktok, faXTwitter } from '@fortawesome/free-brands-svg-i
 
 const Footer = () => {
   return (
-    <div className='bg-black'>
+    <div className='bg-black max-w-screen overflow-x-hidden'>
       <footer className="footer">
-        <div className='w-full p-4 text-2xl font-light flex justify-center items-end'>LOGO AND ADRESS</div>
+        <div className='w-full p-4
+         text-2xl font-light flex justify-center items-end' >LOGO AND ADRESS</div>
         <div className="container mt-12">
           <div className="flex justify-around">
             <div className=" text-center">
-              <h3>RACING</h3>
+              <h3  data-aos="fade-up">RACING</h3>
               <ul className='flex flex-col gap-2 mt-5'>
-                <li>Scuderia Ferrari HP</li>
-                <li>Charles Leclero</li>
-                <li>Carlos Sainz</li>
-                <li>Hypercar</li>
-                <li>GT Series</li>
+                <li data-aos="fade-up" data-aos-delay="50">Scuderia Ferrari HP</li>
+                <li data-aos="fade-up" data-aos-delay="100">Charles Leclero</li>
+                <li data-aos="fade-up" data-aos-delay="150">Carlos Sainz</li>
+                <li data-aos="fade-up" data-aos-delay="200">Hypercar</li>
+                <li data-aos="fade-up" data-aos-delay="250">GT Series</li>
               </ul>
             </div>
 
 
             <div className=" text-center">
-              <h3>SPORTS CARS</h3>
+              <h3 data-aos="fade-up" data-aos-delay="50">SPORTS CARS</h3>
               <ul className='flex flex-col gap-2 mt-5'>
-                <li>Range</li>
-                <li>Configure your Ferrari</li>
-                <li>MyFerrari</li>
-                <li>Pre-owned</li>
-                <li>Dealers</li>
+                <li data-aos="fade-up" data-aos-delay="100">Range</li>
+                <li data-aos="fade-up" data-aos-delay="150">Configure your Ferrari</li>
+                <li data-aos="fade-up" data-aos-delay="200">MyFerrari</li>
+                <li data-aos="fade-up" data-aos-delay="250">Pre-owned</li>
+                <li data-aos="fade-up" data-aos-delay="300">Dealers</li>
               </ul>
             </div>
             <div className=" text-center">
-              <h3>COLLECTIONS</h3>
+              <h3 data-aos="fade-up" data-aos-delay="100">COLLECTIONS</h3>
               <ul className='flex flex-col gap-2 mt-5'>
-                <li>Men</li>
-                <li>Women</li>
-                <li>Kids</li>
-                <li>Shoes</li>
-                <li>Eyewear</li>
+                <li data-aos="fade-up" data-aos-delay="150">Men</li>
+                <li data-aos="fade-up" data-aos-delay="200">Women</li>
+                <li data-aos="fade-up" data-aos-delay="250">Kids</li>
+                <li data-aos="fade-up" data-aos-delay="300">Shoes</li>
+                <li data-aos="fade-up" data-aos-delay="350">Eyewear</li>
 
               </ul>
             </div>
             <div className=" text-center">
-              <h3>EXPERIENCES</h3>
+              <h3 data-aos="fade-up" data-aos-delay="150">EXPERIENCES</h3>
               <ul className='flex flex-col gap-2 mt-5'>
-                <li>Corse Clienti</li>
-                <li>Ferrari Esports Series</li>
-                <li>Ristorante Cavallino</li>
-                <li>Ferrari Museums</li>
-                <li>Ferrari World Abu Dhabi</li>
+                <li data-aos="fade-up" data-aos-delay="200">Corse Clienti</li>
+                <li data-aos="fade-up" data-aos-delay="250">Ferrari Esports Series</li>
+                <li data-aos="fade-up" data-aos-delay="300">Ristorante Cavallino</li>
+                <li data-aos="fade-up" data-aos-delay="350">Ferrari Museums</li>
+                <li data-aos="fade-up" data-aos-delay="400">Ferrari World Abu Dhabi</li>
               </ul>
             </div>
             <div className=" text-center">
-              <h3>ABOUT US</h3>
+              <h3 data-aos="fade-up" data-aos-delay="200">ABOUT US</h3>
               <ul className='flex flex-col gap-2 mt-5'>
-                <li>Corporate</li>
-                <li>Sustainability</li>
-                <li>Media Centre</li>
-                <li>News</li>
-                <li>Magazine</li>
+                <li data-aos="fade-up" data-aos-delay="250">Corporate</li>
+                <li data-aos="fade-up" data-aos-delay="300">Sustainability</li>
+                <li data-aos="fade-up" data-aos-delay="350">Media Centre</li>
+                <li data-aos="fade-up" data-aos-delay="400">News</li>
+                <li data-aos="fade-up" data-aos-delay="450">Magazine</li>
               </ul>
             </div>
           </div>

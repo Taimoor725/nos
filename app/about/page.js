@@ -1,16 +1,21 @@
-import Navbar from '@/components/Home/Navbar'
-import React from 'react'
-import Landing from '@/components/about/Landing'
-import Intro from '@/components/about/Intro'
+"use client"
+import React, { useEffect } from 'react';
+import Landing from '@/components/about/Landing';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-function page() {
+export default function Page() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+    });
+  }, []);
+
   return (
-    <div className='w-screen h-auto overflow-x-hidden bg-[#0C0C14]'>
-      {/* <Navbar/> */}
-      <Landing/>
-      <Intro/>
+    <div className='w-screen h-auto overflow-x-hidden'>
+      <Landing />
     </div>
-  )
+  );
 }
-
-export default page

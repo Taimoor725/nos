@@ -5,15 +5,13 @@
 
 @import url('https://fonts.fontawesome.com/css?family=Roboto:400,700');
 
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
-/* @font-face {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+ @font-face {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   src: url('/fonts/TheNextFont.ttf'); 
-} */
+} 
 
-*{
-  font-family: 'Roboto', sans-serif;
-}
+
 
 
 .D_extra{

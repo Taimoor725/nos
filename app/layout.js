@@ -6,9 +6,9 @@ import dynamic from 'next/dynamic';
 import { Suspense } from "react";
 import Loading from "@/app/loading";
 import { Poppins } from 'next/font/google';
+import Footer from '@/components/footer';
 
 const Navbar = dynamic(() => import('@/components/Home/Navbar'), { ssr: false });
-
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" >
+    <html lang="en">
       <Head>
         <link
           rel="stylesheet"
@@ -32,10 +32,12 @@ export default function RootLayout({ children }) {
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossOrigin="anonymous"
         />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
       </Head>
-      <body className={`${poppins.variable}`}>
+      <body className={`${poppins.variable} font-next`}>
         <Navbar />
         {children}
+        <Footer/>
         <script
           src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
           integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -43,7 +45,7 @@ export default function RootLayout({ children }) {
         ></script>
         <script
           src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7HibX39j7fakFPskvXusvfa0b4Q"
           crossOrigin="anonymous"
         ></script>
         <script
