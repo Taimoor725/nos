@@ -161,7 +161,7 @@ const Landing = () => {
   return (
     <NextUIProvider>
       <section className="w-full overflow-x-hidden">
-        <div className="w-screen h-screen relative overflow-hidden bg-[red]">
+        <div className="w-screen h-screen relative overflow-hidden">
           <video
             src="/videos/intro.mp4"
             className="w-full h-full object-cover z-0 overflow-hidden"
