@@ -15,7 +15,7 @@ export default function Page() {
 
   return (
     <div className='w-screen h-auto overflow-x-hidden'>
-      <Landing />
+      <Landing/>
     </div>
   );
 }

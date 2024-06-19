@@ -1,50 +1,82 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react';
+import './contact.css';
+import CountrySelector from "@/components/accets/DropDown"
+import Content from "@/components/contact/Content"
 
 function ContactUs() {
-  return (
-    <div className='w-1/2 flex flex-col pl-40 text-white gap-20 items-start'>
-      <div className='flex flex-col gap-4'>
-        <h1 className='text-4xl font-extrabold'>Contact us</h1>
-        <p className='text-lg font-light text-gray-400 w-[72%]'>Fill out the form and out team will try to get back to you within 24 hours.</p>
+  const [page,setPage]=useState([null,null])
+  
+
+  const [screen, setScreen] = useState(0);
+  const [translation, setTranslation] = useState(0);
+
+  const USESCROLL = (progressPercentage) => {
+    console.log(progressPercentage);
+    if (progressPercentage > 65) {
+      setScreen(3);
+    } else if (progressPercentage > 40) {
+      setScreen(2);
+    } else if (progressPercentage > 15) {
+      setScreen(1);
+    } else {
+      setScreen(0);
+    }
+  };
+
+  useEffect(() => {
+    setTranslation(40 * screen);
+  }, [screen]);
+
+
+
+return (
+
+    <div className='flex flex-col w-full h-auto bg-white'>
+    <div className='w-full relative'>
+      <div className='hidden md:block w-full h-screen'>
+        <img src="/Contact/first.avif" alt="loading" className='w-full h-full object-cover' />
       </div>
-      <div className='flex gap-2'>
-        {/* <SocialIcons /> */}
-        <div className='flex flex-col gap-4 items-start justify-center'>
-
-          <div className='flex justify-center gap-3'>
-            <img src="/Contact/envelope.svg" alt="abc" className='w-8 h-8' />
-            <div className='flex flex-col gap-2'>
-              <h1 className='text-lg font-bold'>General communication</h1>
-              <div className='text-sm font-light text-gray-400 w-[80%]'>For general queries, including partnership opportunities, please  <p className='text-[red] underline'>emailexample@email.com</p></div>
-            </div>
-          </div>
-
-          <div className='flex justify-center gap-3'>
-            <img src="/Contact/chat.svg" alt="abc" className='w-8 h-8' />
-            <div className='flex flex-col gap-2'>
-              <h1 className='text-xl font-bold'>General communication</h1>
-              <div className='text-sm font-light text-gray-400 w-[80%]'>We’re here to help! If you have technical issues <p className='text-[red] underline'>contact support</p></div>
-            </div>
-          </div>
-
-          <div className='flex justify-center gap-3'>
-            <img src="/Contact/map-pin.svg" alt="abc" className='w-8 h-8' />
-            <div className='flex flex-col gap-2'>
-              <h1 className='text-xl font-bold'>Our headquarter</h1>
-              <div className='text-sm font-light text-gray-400 w-[80%]'>8502 Preston Rd. Inglewood, Maine 98380 <p className='text-[red] underline'>get directions</p></div>
-            </div>
-          </div>
-
+      <div className='md:hidden w-full h-screen'>
+        <img src="/Contact/first_again.avif" alt="loading" className='w-full h-full object-cover' />
+      </div>
+      <div></div>
+      <div className='absolute w-[30%] flex flex-col gap-3 top-[50%] translate-y-[-50%] left-[10%]'>
+        <p className='text-2xl font-bold'>Headquarter</p>
+        <div className='flex flex-col w-full'>
+        <p className='font-extrabold text-5xl'>Ferrari SpA, headquarters and factory</p>
+        </div>
+        <div className='flex flex-col gap-1'>
+        <p className='text-xl font-medium'>ABC USA ABC Street 121212</p>
+        <p className='text-xl font-medium'>+1212121212</p>
         </div>
       </div>
     </div>
-  )
+
+
+    <section className='w-screen h-auto flex relative'>
+  <div className='md:block  left h-screen w-1/3 sticky top-0 flex'>
+
+  <div className={`absolute w-[4px] h-6 left-[48%] top-[12%] bg-[red] translate-y-[${translation}px] transition-transform duration-[0.5s]`}></div>
+      <div className='flex flex-col w-full items-end md:pr-20 md:py-[76px] '>
+          <div className='flex flex-col text-black gap-3 font-semibold font-xl'>
+          <p>CUSTOMER CARE</p>
+          <p>ROAD ASSISTANCE</p>
+          <p>ONLINE STORE</p>
+          <p>MUSEUMS</p>
+          </div>
+      </div>
+  </div>
+
+  <div className='right h-auto w-2/3'>
+      <Content GetValue={USESCROLL}/>
+  </div>
+</section>
+
+    </div>
+  );
 }
 
-export default ContactUs
-
-
-
+export default ContactUs;
 
 

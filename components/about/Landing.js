@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import MainButton from '../accets/MainButton';
 import "./about.css"
+import Partners from "@/components/accets/Partners"
 
 
 function Landing() {
@@ -59,6 +60,7 @@ function Landing() {
       <ImgCards />
       <RracesCard/>
       <CarSH/>
+      <Partners/>
     </div>
   );
 }
@@ -69,9 +71,17 @@ export default Landing;
 
 const CarSH=()=>{
   return(
-    <div className='w-screen h-screen'>
-      <img src="/About/about_last.avif" alt="SF90" className='w-full h-full  md:aspect-1 object-cover' />
-      <div ></div>
+    <div className='w-screen md:h-auto h-screen relative'>
+      <img src="/About/car.avif" alt="SF90" className='w-full h-full object-cover' />
+      <div className='flex flex-col w-[35%] absolute top-[15%] left-[5%] gap-2'> 
+        <div className='flex items-center text-[red] gap-2'>
+          <div className='bg-[red] h-[0.3px] w-[25%]'></div>CAREER
+        </div>
+        <div className='flex flex-col gap-4 pl-6'>
+            <p className='text-4xl font-bold'>Our search for excellence</p>
+            <div className='flex text-medium font-medium items-center'>CAREER OPPORTUNITIES <MainButton/></div>
+        </div>
+      </div>
     </div>
   )
 }
