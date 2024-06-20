@@ -40,6 +40,13 @@ export default function Filter() {
   }
 
 
+  const detailHandlerInvers=()=>{
+    setGrid([false,true])
+    setDetail(false)
+}
+
+
+
   const Results = () => {
 
 
@@ -51,8 +58,8 @@ export default function Filter() {
           <div className='flex items-center gap-2'><p className='font-bold text-3xl'>{resultCount}</p><p className='font-medium text-3xl'>Ergebnisse</p></div>
           <div className='flex-grow flex justify-end items-center gap-3'>
             <div ><img src="/sales/list-grey.png" alt="list" className='object-cover md:w-8 md:h-[30px] cursor-pointer hover:scale-105' onClick={() => setGrid([true, false])} /></div>
-            <div ><img src="/sales/grid-black.png" alt="list" className='object-cover md:w-8 md:h-[30px] cursor-pointer hover:scale-105' onClick={() => setGrid([false, true])} /></div>
-            <DropDown data={data.filter} />
+            <div ><img src="/sales/grid-black.svg" alt="list" className='fill-white object-cover md:w-8 md:h-[30px] cursor-pointer hover:scale-105' onClick={() => setGrid([false, true])} /></div>
+            <DropDown data={data.filter}/>
           </div>
         </div>)}
 
@@ -69,7 +76,7 @@ export default function Filter() {
         {grid[0] && (
           <div className='w-full grid grid-cols-1 gap-4 overflow-hidden'>
             {SlicedCarsData.map((car, index) => (
-              <CarCardHorizontal key={index} data={car} />
+              <CarCardHorizontal key={index} data={car} onClick={()=>detailHandler(car)}/>
             ))}
           </div>
         )
@@ -78,7 +85,7 @@ export default function Filter() {
 
 
         {Detail && (
-          <CarDetail data={selectCar}/>
+          <CarDetail data={selectCar} onClick={detailHandlerInvers}/>
         )}
       </div>
     );
@@ -87,7 +94,7 @@ export default function Filter() {
 
 
   return (
-    <div className="w-screen h-auto bg-white flex flex-col overflow-x-hidden text-black">
+    <div className="w-screen h-auto flex flex-col overflow-x-hidden text-white items-center">
 
       {/* first screen  */}
       <div className='w-full relative  text-white'>
@@ -118,16 +125,16 @@ export default function Filter() {
       <div className='w-full h-auto flex justify-center'>
         <Results />
       </div>
-      <div className='flex w-[85%] justify-center p-5'>{!Detail && (<Pagination total={(CarsData.length/postPerPage)+1} initialPage={1} onChange={(page) => setPage(page)} />)}</div>
+      <div className='flex w-[85%] justify-center p-4'>{!Detail && (<Pagination total={(CarsData.length/postPerPage)+1} initialPage={1} onChange={(page) => setPage(page)} />)}</div>
     </div>
   );
 }
 
 const Selector = () => {
   return (
-    <div className="w-[85%] minh-full bg-[#dedddd] flex flex-col">
+    <div className="w-[85%] minh-full bg-[#b0b0b0] rounded-md flex flex-col text-white">
       <div className="w-full font-medium text-xl p-3">FILTERN NACH</div>
-      <div className="grid grid-cols-4 px-2 gap-2 ">
+      <div className="grid grid-cols-4 px-3 gap-2 ">
         <FilterDropDown label={'Marken'} data={data.eingen} />
         <FilterDropDown label={'Model'} data={data.model} />
         <FilterDropDown label={'Price'} data={data.price} />
@@ -155,7 +162,7 @@ function DropDown({ data }) {
     setSelected(e.target.value)
   }
   return (
-    <select name="" id="filtr" onChange={Handler} value={selected} className='w-[30%] p-[12px] text-sm border-[1px] border-[gray]'>
+    <select name="" id="filtr" onChange={Handler} value={selected} className='w-[30%] p-[12px] text-sm border-[1px] border-[gray] text-black'>
       <option value="" disabled >Neueste Angebote zuerst</option>
       {data.map((data) => (
         <option value={data}>{data}</option>
@@ -166,7 +173,7 @@ function DropDown({ data }) {
 
 const CarsData = [
   {
-    imageUrl: ['/sales/cars/car (1).jpeg','/sales/cars/car (3).jpeg','/sales/cars/car (4).jpeg','/sales/cars/car (2).jpeg','/sales/cars/car (5).jpeg','/sales/cars/car (6).jpeg','/sales/cars/car (7).jpeg','/sales/cars/car (8).jpeg',],
+    imageUrl: ['/sales/cars/car (1).jpeg', '/sales/cars/car (3).jpeg', '/sales/cars/car (4).jpeg', '/sales/cars/car (2).jpeg', '/sales/cars/car (5).jpeg', '/sales/cars/car (6).jpeg', '/sales/cars/car (7).jpeg', '/sales/cars/car (8).jpeg'],
     name: 'BMW 128ti Steptronic',
     price: "CHF 52'900,-",
     market: "Neu",
@@ -175,10 +182,17 @@ const CarsData = [
     fuelType: 'Benzin',
     power: '265 PS',
     CO2: '36g/km',
-    CombineCO2: '158 g/km'
+    CombineCO2: '158 g/km',
+    deler: 'Zuchwil/Solothurn, Autoverkehr AG Zuchwil',
+    adress: 'Old Street New House 125',
+    phone: '+912912320392',
+    guarantee: 'Yes',
+    type: 'SUV',
+    color: 'Red',
+    noOfSeats: 5
   },
   {
-    imageUrl: ['/sales/cars/car (4).jpeg','/sales/cars/car (2).jpeg','/sales/cars/car (3).jpeg','/sales/cars/car (1).jpeg','/sales/cars/car (5).jpeg','/sales/cars/car (6).jpeg','/sales/cars/car (7).jpeg','/sales/cars/car (8).jpeg',],
+    imageUrl: ['/sales/cars/car (4).jpeg', '/sales/cars/car (2).jpeg', '/sales/cars/car (3).jpeg', '/sales/cars/car (1).jpeg', '/sales/cars/car (5).jpeg', '/sales/cars/car (6).jpeg', '/sales/cars/car (7).jpeg', '/sales/cars/car (8).jpeg'],
     name: 'Audi A4 Avant',
     price: "CHF 45'300,-",
     market: "Neu",
@@ -187,10 +201,17 @@ const CarsData = [
     fuelType: 'Diesel',
     power: '190 PS',
     CO2: '95g/km',
-    CombineCO2: '110 g/km'
+    CombineCO2: '110 g/km',
+    deler: 'Zuchwil/Solothurn, Autoverkehr AG Zuchwil',
+    adress: 'Old Street New House 125',
+    phone: '+912912320392',
+    guarantee: 'Yes',
+    type: 'SUV',
+    color: 'Blue',
+    noOfSeats: 5
   },
   {
-    imageUrl: ['/sales/cars/car (5).jpeg','/sales/cars/car (2).jpeg','/sales/cars/car (3).jpeg','/sales/cars/car (4).jpeg','/sales/cars/car (1).jpeg','/sales/cars/car (6).jpeg','/sales/cars/car (7).jpeg','/sales/cars/car (8).jpeg',],
+    imageUrl: ['/sales/cars/car (5).jpeg', '/sales/cars/car (2).jpeg', '/sales/cars/car (3).jpeg', '/sales/cars/car (4).jpeg', '/sales/cars/car (1).jpeg', '/sales/cars/car (6).jpeg', '/sales/cars/car (7).jpeg', '/sales/cars/car (8).jpeg'],
     name: 'Toyota Prius',
     price: "CHF 30'500,-",
     market: "Neu",
@@ -199,11 +220,17 @@ const CarsData = [
     fuelType: 'Hybrid',
     power: '122 PS',
     CO2: '70g/km',
-    CombineCO2: '82 g/km'
+    CombineCO2: '82 g/km',
+    deler: 'Zuchwil/Solothurn, Autoverkehr AG Zuchwil',
+    adress: 'Old Street New House 125',
+    phone: '+912912320392',
+    guarantee: 'Yes',
+    type: 'Off Road',
+    color: 'Green',
+    noOfSeats: 5
   },
   {
-    imageUrl: ['/sales/cars/car (3).jpeg','/sales/cars/car (1).jpeg','/sales/cars/car (2).jpeg','/sales/cars/car (4).jpeg','/sales/cars/car (5).jpeg','/sales/cars/car (6).jpeg','/sales/cars/car (7).jpeg','/sales/cars/car (8).jpeg',],
-
+    imageUrl: ['/sales/cars/car (3).jpeg', '/sales/cars/car (1).jpeg', '/sales/cars/car (2).jpeg', '/sales/cars/car (4).jpeg', '/sales/cars/car (5).jpeg', '/sales/cars/car (6).jpeg', '/sales/cars/car (7).jpeg', '/sales/cars/car (8).jpeg'],
     name: 'Tesla Model 3',
     price: "CHF 55'000,-",
     market: "Neu",
@@ -212,11 +239,17 @@ const CarsData = [
     fuelType: 'Elektro',
     power: '283 PS',
     CO2: '0g/km',
-    CombineCO2: '0 g/km'
+    CombineCO2: '0 g/km',
+    deler: 'Zuchwil/Solothurn, Autoverkehr AG Zuchwil',
+    adress: 'Old Street New House 125',
+    phone: '+912912320392',
+    guarantee: 'Yes',
+    type: 'Sedan',
+    color: 'White',
+    noOfSeats: 5
   },
   {
-    imageUrl: ['/sales/cars/car (8).jpeg','/sales/cars/car (1).jpeg','/sales/cars/car (2).jpeg','/sales/cars/car (3).jpeg','/sales/cars/car (4).jpeg','/sales/cars/car (5).jpeg','/sales/cars/car (6).jpeg','/sales/cars/car (7).jpeg',],
-
+    imageUrl: ['/sales/cars/car (8).jpeg', '/sales/cars/car (1).jpeg', '/sales/cars/car (2).jpeg', '/sales/cars/car (3).jpeg', '/sales/cars/car (4).jpeg', '/sales/cars/car (5).jpeg', '/sales/cars/car (6).jpeg', '/sales/cars/car (7).jpeg'],
     name: 'Ford Mustang GT',
     price: "CHF 75'000,-",
     market: "Gebraucht",
@@ -225,11 +258,17 @@ const CarsData = [
     fuelType: 'Benzin',
     power: '450 PS',
     CO2: '220g/km',
-    CombineCO2: '250 g/km'
+    CombineCO2: '250 g/km',
+    deler: 'Zuchwil/Solothurn, Autoverkehr AG Zuchwil',
+    adress: 'Old Street New House 125',
+    phone: '+912912320392',
+    guarantee: 'No',
+    type: 'Sports',
+    color: 'Yellow',
+    noOfSeats: 4
   },
   {
-    imageUrl: ['/sales/cars/car (1).jpeg','/sales/cars/car (2).jpeg','/sales/cars/car (3).jpeg','/sales/cars/car (4).jpeg','/sales/cars/car (5).jpeg','/sales/cars/car (6).jpeg','/sales/cars/car (7).jpeg','/sales/cars/car (8).jpeg',],
-
+    imageUrl: ['/sales/cars/car (1).jpeg', '/sales/cars/car (2).jpeg', '/sales/cars/car (3).jpeg', '/sales/cars/car (4).jpeg', '/sales/cars/car (5).jpeg', '/sales/cars/car (6).jpeg', '/sales/cars/car (7).jpeg', '/sales/cars/car (8).jpeg'],
     name: 'Porsche 911 Carrera',
     price: "CHF 120'000,-",
     market: "Gebraucht",
@@ -238,10 +277,17 @@ const CarsData = [
     fuelType: 'Benzin',
     power: '385 PS',
     CO2: '180g/km',
-    CombineCO2: '200 g/km'
+    CombineCO2: '200 g/km',
+    deler: 'Zuchwil/Solothurn, Autoverkehr AG Zuchwil',
+    adress: 'Old Street New House 125',
+    phone: '+912912320392',
+    guarantee: 'No',
+    type: 'Sports',
+    color: 'Black',
+    noOfSeats: 4
   },
   {
-    imageUrl: ['/sales/cars/car (4).jpeg','/sales/cars/car (1).jpeg','/sales/cars/car (2).jpeg','/sales/cars/car (3).jpeg','/sales/cars/car (5).jpeg','/sales/cars/car (6).jpeg','/sales/cars/car (7).jpeg','/sales/cars/car (8).jpeg',],
+    imageUrl: ['/sales/cars/car (4).jpeg', '/sales/cars/car (1).jpeg', '/sales/cars/car (2).jpeg', '/sales/cars/car (3).jpeg', '/sales/cars/car (5).jpeg', '/sales/cars/car (6).jpeg', '/sales/cars/car (7).jpeg', '/sales/cars/car (8).jpeg'],
     name: 'BMW 128ti Steptronic',
     price: "CHF 52'900,-",
     market: "Neu",
@@ -250,11 +296,17 @@ const CarsData = [
     fuelType: 'Benzin',
     power: '265 PS',
     CO2: '36g/km',
-    CombineCO2: '158 g/km'
+    CombineCO2: '158 g/km',
+    deler: 'Zuchwil/Solothurn, Autoverkehr AG Zuchwil',
+    adress: 'Old Street New House 125',
+    phone: '+912912320392',
+    guarantee: 'Yes',
+    type: 'SUV',
+    color: 'Red',
+    noOfSeats: 5
   },
   {
-    imageUrl: ['/sales/cars/car (5).jpeg','/sales/cars/car (1).jpeg','/sales/cars/car (2).jpeg','/sales/cars/car (3).jpeg','/sales/cars/car (4).jpeg','/sales/cars/car (6).jpeg','/sales/cars/car (7).jpeg','/sales/cars/car (8).jpeg',],
-    
+    imageUrl: ['/sales/cars/car (5).jpeg', '/sales/cars/car (1).jpeg', '/sales/cars/car (2).jpeg', '/sales/cars/car (3).jpeg', '/sales/cars/car (4).jpeg', '/sales/cars/car (6).jpeg', '/sales/cars/car (7).jpeg', '/sales/cars/car (8).jpeg'],
     name: 'Audi A4 Avant',
     price: "CHF 45'300,-",
     market: "Neu",
@@ -263,11 +315,17 @@ const CarsData = [
     fuelType: 'Diesel',
     power: '190 PS',
     CO2: '95g/km',
-    CombineCO2: '110 g/km'
+    CombineCO2: '110 g/km',
+    deler: 'Zuchwil/Solothurn, Autoverkehr AG Zuchwil',
+    adress: 'Old Street New House 125',
+    phone: '+912912320392',
+    guarantee: 'Yes',
+    type: 'SUV',
+    color: 'Blue',
+    noOfSeats: 5
   },
   {
-    imageUrl: ['/sales/cars/car (6).jpeg','/sales/cars/car (1).jpeg','/sales/cars/car (2).jpeg','/sales/cars/car (3).jpeg','/sales/cars/car (4).jpeg','/sales/cars/car (5).jpeg','/sales/cars/car (7).jpeg','/sales/cars/car (8).jpeg',],
-
+    imageUrl: ['/sales/cars/car (6).jpeg', '/sales/cars/car (1).jpeg', '/sales/cars/car (2).jpeg', '/sales/cars/car (3).jpeg', '/sales/cars/car (4).jpeg', '/sales/cars/car (5).jpeg', '/sales/cars/car (7).jpeg', '/sales/cars/car (8).jpeg'],
     name: 'Mercedes-Benz C 200',
     price: "CHF 60'700,-",
     market: "Neu",
@@ -276,57 +334,13 @@ const CarsData = [
     fuelType: 'Benzin',
     power: '204 PS',
     CO2: '120g/km',
-    CombineCO2: '140 g/km'
-  },
-  {
-    imageUrl: ['/sales/cars/car (7).jpeg','/sales/cars/car (1).jpeg','/sales/cars/car (2).jpeg','/sales/cars/car (3).jpeg','/sales/cars/car (4).jpeg','/sales/cars/car (5).jpeg','/sales/cars/car (6).jpeg','/sales/cars/car (8).jpeg',],
-
-    name: 'Volkswagen Golf GTI',
-    price: "CHF 39'900,-",
-    market: "Gebraucht",
-    transmition: 'Manuell',
-    kilometer: '20,000',
-    fuelType: 'Benzin',
-    power: '245 PS',
-    CO2: '150g/km',
-    CombineCO2: '170 g/km'
-  },
-  {
-    imageUrl: ['/sales/cars/car (1).jpeg','/sales/cars/car (2).jpeg','/sales/cars/car (3).jpeg','/sales/cars/car (4).jpeg','/sales/cars/car (5).jpeg','/sales/cars/car (6).jpeg','/sales/cars/car (7).jpeg','/sales/cars/car (8).jpeg',],
-    name: 'Toyota Prius',
-    price: "CHF 30'500,-",
-    market: "Neu",
-    transmition: 'Automat',
-    kilometer: '0',
-    fuelType: 'Hybrid',
-    power: '122 PS',
-    CO2: '70g/km',
-    CombineCO2: '82 g/km'
-  },
-  {
-    imageUrl: ['/sales/cars/car (5).jpeg','/sales/cars/car (1).jpeg','/sales/cars/car (2).jpeg','/sales/cars/car (3).jpeg','/sales/cars/car (4).jpeg','/sales/cars/car (6).jpeg','/sales/cars/car (7).jpeg','/sales/cars/car (8).jpeg',],
-
-    name: 'Tesla Model 3',
-    price: "CHF 55'000,-",
-    market: "Neu",
-    transmition: 'Automat',
-    kilometer: '0',
-    fuelType: 'Elektro',
-    power: '283 PS',
-    CO2: '0g/km',
-    CombineCO2: '0 g/km'
-  },
-  {
-    imageUrl: ['/sales/cars/car (4).jpeg','/sales/cars/car (1).jpeg','/sales/cars/car (2).jpeg','/sales/cars/car (3).jpeg','/sales/cars/car (5).jpeg','/sales/cars/car (6).jpeg','/sales/cars/car (7).jpeg','/sales/cars/car (8).jpeg',],
-
-    name: 'Ford Mustang GT',
-    price: "CHF 75'000,-",
-    market: "Gebraucht",
-    transmition: 'Automat',
-    kilometer: '15,000',
-    fuelType: 'Benzin',
-    power: '450 PS',
-    CO2: '220g/km',
-    CombineCO2: '250 g/km'
-  },
-];
+    CombineCO2: '140 g/km',
+    deler: 'Zuchwil/Solothurn, Autoverkehr AG Zuchwil',
+    adress: 'Old Street New House 125',
+    phone: '+912912320392',
+    guarantee: 'Yes',
+    type: 'Sedan',
+    color: 'Gray',
+    noOfSeats: 5
+  }
+]; 

@@ -8,8 +8,8 @@ function FilterDropDown({label,data}) {
         setSelected(e.target.value)
     }
   return (
-    <div className='flex flex-col '>
-        <label htmlFor="filter" className='text-xl font-bold '>{label}</label>
+    <div className='flex flex-col text-black'>
+        <label htmlFor="filter" className='text-xl font-bold text-white'>{label}</label>
         <select name="" id="filtr" onChange={Handler} value={selected} className='w-full px-2 py-3 border-[1px] border-[gray]'>
             <option value="" disabled >Alle</option>
             {data.map((data)=>(

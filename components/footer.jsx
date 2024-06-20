@@ -77,7 +77,7 @@ const Footer = () => {
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, ullam inventore? Quidem unde repellendus non minima quis, exercitationem, possimus, cum dolor quaerat nobis nam dolores consequuntur beatae animi. Fugit ratione quae porro adipisci dignissimos dolor dolores, ullam officiis sit cum explicabo, commodi numquam asperiores alias inventore. Omnis voluptas impedit totam, dolore ipsam eligendi nulla sapiente corporis iusto magni qui optio possimus maiores, quod quas illo! Esse nisi ea repellat quia natus. Neque cum quae ipsa pariatur quis, tempora dolorem voluptatibus fugit saepe aperiam iure consequatur eum esse vel. Vero commodi mollitia et officia obcaecati totam provident cumque aperiam culpa cum?
           </div>
       </div>
-      <div className='w-full p-3 font-light text-xl text-white flex justify-center items-center'>LOGO</div>
+      <div className='w-full p-3 font-light text-xl text-white flex justify-center items-center'><img src="/Layer 1_logo.png" alt="Logo" className='w-32 h-auto' /></div>
        
     </div>
   );
