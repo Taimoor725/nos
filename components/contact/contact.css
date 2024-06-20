@@ -25,7 +25,7 @@
   
   
   .button:before {
-    border: 2px solid black;
+    border: 2px solid white;
     transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
       transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
   }
@@ -67,7 +67,7 @@
     height: 16px;
     margin: 17px 18px 0 18px;
     transform: rotate(180deg);
-    fill: black;
+    fill: white;
   }
   
   .button:hover .button-box,

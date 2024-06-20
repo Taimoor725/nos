@@ -85,7 +85,6 @@ const FinalDetails = ({ data }) => {
     
     
     
-    
      rounded-md'>
       <div className='text-4xl font-light'> FAHRZEUGDATEN </div>
       <div className='flex flex-col gap-1'>

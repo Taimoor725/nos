@@ -3,7 +3,7 @@ import React from 'react';
 function CarCard({ data, onClick }) {
   return (
     <div 
-      className='gap-3 w-full h-[93vh] shadow-md border-[1px] border-[gray] shadow-[gray] flex flex-col overflow-hidden cursor-pointer'
+      className='gap-2 w-full h-[82vh] flex flex-col overflow-hidden cursor-pointer custom-gradient'
       onClick={onClick}
     >
       <div className='overflow-hidden'>
@@ -13,12 +13,13 @@ function CarCard({ data, onClick }) {
           className="object-cover hover:scale-110 transition-transform ease-in-out duration-[1s]" 
         />
       </div>
+
       <div className='p-2'>
         <p>{data.name}</p>
         <p className='font-bold text-xl'>{data.price}</p>
       </div>
       <div className='w-full flex justify-center items-center'>
-        <div className='w-[95%] h-1 bg-black'></div>
+        <div className='w-[95%] h-1 bg-white'></div>
       </div>
       <div className='flex p-2 flex-col text-[#c9c7c7]'>
         <div className='flex'>
@@ -53,7 +54,7 @@ function CarCard({ data, onClick }) {
           <div className='flex-grow flex justify-end font-bold text-white'>{data.CombineCO2}</div>
         </div>
       </div>
-    </div>
+      </div>
   );
 }
 

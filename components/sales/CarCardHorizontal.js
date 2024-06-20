@@ -2,8 +2,8 @@ import React from 'react';
 
 function CarCardHorizontal({ data,onClick}) {
   return (
-      <div className='w-full h-[43vh] border-[0.3px] border-[gray] shadow-[gray] shadow-md flex' onClick={onClick}>
-      <img src={data.imageUrl[0]} alt="car" className='h-full object-cover' />
+      <div className='w-full h-[43vh] shadow-md flex  custom-gradient' onClick={onClick}>
+      <img src={data.imageUrl[0]} alt="car" className='h-full object-cover rounded-[16px]' />
       <div className='flex flex-col flex-grow p-4 gap-2'>
         <div className='flex'>
           <span className='font-medium text-xl'>{data.name}</span>
