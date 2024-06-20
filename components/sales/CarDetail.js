@@ -51,7 +51,7 @@ function CarDetail({ data, onClick }) {
         <div className='w-1/2 h-full flex flex-col px-16 relative '>
           {/* 2nd half */}
           <CarInfo data={data} />
-          <div className='flex flex-col w-full h-[31.5%] absolute px-16 bottom-0 left-0 py-3 gap-4 rounded-md bg-[#353535]'>
+          <div className='flex flex-col w-full h-[31.5%] absolute px-16 bottom-0 left-0 py-3 gap-4 rounded-md custom-gradient'>
             <p className='font-light text-4xl'>Energiedaten</p>
             <div className='flex flex-col gap-1'>
             <div className='flex text-xl'>
@@ -78,7 +78,7 @@ export default CarDetail;
 
 const FinalDetails = ({ data }) => {
   return (
-    <div className='h-[55vh] w-full flex p-3 flex-col text-[#ddd8d8] gap-4 mt-2  bg-[#353535] rounded-md'>
+    <div className='h-[55vh] w-full flex p-3 flex-col text-[#ddd8d8] gap-4 mt-2  custom-gradient rounded-md'>
       <div className='text-4xl font-light'> FAHRZEUGDATEN </div>
       <div className='flex flex-col gap-1'>
         <div className='flex text-xl'>

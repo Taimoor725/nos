@@ -132,9 +132,9 @@ export default function Filter() {
 
 const Selector = () => {
   return (
-    <div className="w-[85%] minh-full bg-[#b0b0b0] rounded-md flex flex-col text-white">
+    <div className="w-[85%] min-h-full rounded-md flex flex-col text-white custom-gradient ">
       <div className="w-full font-medium text-xl p-3">FILTERN NACH</div>
-      <div className="grid grid-cols-4 px-3 gap-2 ">
+      <div className="grid grid-cols-4 px-3 gap-2">
         <FilterDropDown label={'Marken'} data={data.eingen} />
         <FilterDropDown label={'Model'} data={data.model} />
         <FilterDropDown label={'Price'} data={data.price} />
@@ -143,7 +143,8 @@ const Selector = () => {
       </div>
     </div>
   );
-}
+};
+
 
 const data = {
   model: ['1 SERIE', '-118', '-120', '-M135', 'Z SERIES', 'X SERIES', 'i3', '-X1'],
