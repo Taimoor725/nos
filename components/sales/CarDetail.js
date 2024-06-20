@@ -78,7 +78,15 @@ export default CarDetail;
 
 const FinalDetails = ({ data }) => {
   return (
-    <div className='h-[55vh] w-full flex p-3 flex-col text-[#ddd8d8] gap-4 mt-2  custom-gradient rounded-md'>
+    <div className='h-[55vh] w-full flex p-3 flex-col text-[#ddd8d8] gap-4 mt-2  custom-gradient
+    
+    
+    
+    
+    
+    
+    
+     rounded-md'>
       <div className='text-4xl font-light'> FAHRZEUGDATEN </div>
       <div className='flex flex-col gap-1'>
         <div className='flex text-xl'>
