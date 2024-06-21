@@ -12,13 +12,24 @@
 
 .custom-gradient {
   background: transparent;
-  backdrop-filter: blur(40px); /* Increased blur value */
-  -webkit-backdrop-filter: blur(40px); /* For Safari support with increased blur value */
-  background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.1), rgba(55, 65, 81, 0.8));
+  backdrop-filter: blur(30px); /* Increased blur value */
+  -webkit-backdrop-filter: blur(30px); /* For Safari support with increased blur value */
+  background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.01), rgba(55, 65, 81, 0.8));
   border: 1px solid rgba(255, 255, 255, 0.18); /* Optional: Add a border for more glass effect */
   border-radius: 16px; 
-  z-index: 0;
+
 }
+
+.custom-NavBar {
+  background: linear-gradient(120deg, rgba(132, 136, 171, 0.1), rgba(121, 150, 197, 0.8)),
+              url('https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iPeraoMnxTC8/v1/-1x-1.jpg') no-repeat center center; /* Set the image as background */
+  background-size: cover; /* Ensure the image covers the entire background */
+  backdrop-filter: blur(30px); /* Increased blur value */
+  -webkit-backdrop-filter: blur(30px); /* For Safari support with increased blur value */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Optional: Add a border for more glass effect */
+  border-radius: 16px; 
+}
+
 
 
 
