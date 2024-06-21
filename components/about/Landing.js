@@ -26,41 +26,43 @@ function Landing() {
 
   return (
     <div className='flex flex-col w-screen text-white overflow-x-hidden'>
-      <div className='w-full md:h-[100vh] overflow-hidden relative flex justify-center items-center bg-[#EAEFF2]'>
-        <img src="/About/front (2).avif" alt="loading" className='w-[45rem] md:h-full min-h-screen  object-cover picture aspect-1' />
+      <div className='w-full md:h-[113vh] overflow-hidden relative flex justify-center items-center bg-[#EAEFF2]'>
+        <div className='md:block hidden'><img src="/About/car.avif" alt="loading" className='w-full h-full  object-cover ' /></div>
+        <div className='md:hidden block'><img src="/About/front (2).avif" alt="loading" className='w-full h-screen  object-cover ' /></div>
 
-        <div className="h-[60%] absolute top-[40%] inset-0 bg-gradient-to-b from-transparent to-black/50 z-1"></div>
-        <div className='z-2 flex flex-col items-center text-center w-[80%] top-[65%] translate-y-[-30%] left-[50%] translate-x-[-50%] absolute md:w-[63%] gap-2'>
+        <div className="absolute top-0 h-screen inset-0 bg-gradient-to-b from-transparent to-black/50 z-1"></div>
+        <div className='z-2 flex flex-col items-center text-center w-[80%] md:top-[45%] top-[45%] translate-y-[-30%] left-[50%] translate-x-[-50%] absolute md:w-[63%] gap-2'>
           <p className='md:text-[20px] text-[20px] font-medium' data-aos="fade-up" data-aos-delay="10" data-aos-once="true">Cars</p>
           <p className='text-2xl md:text-4xl font-extrabold' data-aos="fade-up" data-aos-delay="40" data-aos-once="true">THE 12CILINDRI - DRAWN TO THE FUTURE</p>
           <p className='md:font-semibold text-lg' data-aos="fade-up" data-aos-delay="70" data-aos-once="true">With the new 12Cilindri, Ferrari has invented a radical new design language. We speak to the design team to get the inside line on its place in Ferrari's proud lineage of iconic V12 front-mid-engined models, and understand its radically futuristic design ethos</p>
           <div className='flex justify-center items-center font-bold' data-aos="fade-up" data-aos-delay="100" data-aos-once="true" data-aos-offset="0">READ MORE <MainButton /></div>
-          <ul className='md:relative adsolute md:top-[60%] pb-3 w-full justify-center items-center flex mt-[24px] md:mt-0'>
-            <li ><svg className={`${color[0]} md:w-[4rem] w-[2rem] h-[2rem] md:h-[4rem] `} xmlns="http://www.w3.org/2000/svg" width="40" height="15" viewBox="0 0 40 15"><path d="M20 9L0 0l16.182 13.35a6 6 0 0 0 7.636 0L40 0 20 9z" /></svg></li>
-            <li className='absolute md:top-4 bottom-0'><svg className={`${color[1]} md:w-[4rem] w-[2rem] h-[2rem] md:h-[4rem] `} xmlns="http://www.w3.org/2000/svg" width="40" height="15" viewBox="0 0 40 15"><path d="M20 9L0 0l16.182 13.35a6 6 0 0 0 7.636 0L40 0 20 9z" /></svg></li>
+          <ul className='absolute w-full h-[10rem] bottom-4 md:bottom-[-50%] flex justify-center z-20' data-aos-delay="0" data-aos-once="true">
+            <li className='absolute bottom-[10%]   '><svg className={`${color[0]} md:w-[4rem] w-[2rem] h-[2rem] md:h-[4rem] `} xmlns="http://www.w3.org/2000/svg" width="40" height="15" viewBox="0 0 40 15" fill="none"><path d="M20 9L0 0l16.182 13.35a6 6 0 0 0 7.636 0L40 0 20 9z" /></svg></li>
+            <li className='absolute bottom-0 '><svg className={`${color[1]} md:w-[4rem] w-[2rem] h-[2rem] md:h-[4rem] `} xmlns="http://www.w3.org/2000/svg" width="40" height="15" viewBox="0 0 40 15" fill="none"><path d="M20 9L0 0l16.182 13.35a6 6 0 0 0 7.636 0L40 0 20 9z" /></svg></li>
           </ul>
         </div>
       </div>
 
-      <div className='w-full h-screen flex justify-center items-center relative bg-black flex-col '>
+      <div className='w-full h-screen flex justify-center items-center relative flex-col '>
 
-        <div className="h-[55%] absolute top-[45%] inset-0 bg-gradient-to-b from-transparent to-black/50 z-1"></div>
-        <img src="/About/final_try_2.avif" alt="loading" className='w-full h-full  object-cover ' />
-        <div className='z-2 flex flex-col items-center text-center w-[80%] top-[65%] md:top-[57%] translate-y-[-30%] left-[50%] translate-x-[-50%] absolute md:w-[63%] gap-2'>
+        <div className="h-screen absolute top-[45%] inset-0 bg-gradient-to-b from-transparent to-black/50 z-1"></div>
+        <div className='md:hidden block'><img src="/About/mobile.avif" alt="loading" className='w-full h-screen  object-cover ' /></div>
+        <div className='md:block hidden'><img src="/About/desktop.avif" alt="loading" className='w-full h-full  object-cover ' /></div>
+        <div className='z-2 flex flex-col items-center text-center w-[80%] top-[55%] md:top-[70%] translate-y-[-30%] left-[50%] translate-x-[-50%] absolute md:w-[63%] gap-2'>
           <p className='md:text-[20px] text-[20px] font-medium' data-aos="fade-up" data-aos-delay="10" data-aos-once="true">Passion</p>
           <p className='text-2xl md:text-4xl font-extrabold' data-aos="fade-up" data-aos-delay="40" data-aos-once="true">CONQUERING HERO</p>
           <p className='md:font-semibold text-lg' data-aos="fade-up" data-aos-delay="70" data-aos-once="true">Although a lesser-known face in the exalted band of spirited post-war racing drivers, Umberto Maglioli was a force to be reckoned with. We celebrate the 70th anniversary of his glorious triumph at the fearsome 1954 Carrera Panamericana</p>
           <div className='flex justify-center items-center font-bold' data-aos="fade-up" data-aos-delay="100" data-aos-once="true">READ MORE <MainButton /></div>
         </div>
-        <ul className='absolute w-full h-[10rem] bottom-8 flex justify-center z-20' data-aos-delay="0" data-aos-once="true">
+        <ul className='absolute w-full h-[10rem] bottom-4 md:bottom-[-3rem] flex justify-center z-20' data-aos-delay="0" data-aos-once="true">
           <li className='absolute bottom-[10%]   '><svg className={`${color[0]} md:w-[4rem] w-[2rem] h-[2rem] md:h-[4rem] `} xmlns="http://www.w3.org/2000/svg" width="40" height="15" viewBox="0 0 40 15" fill="none"><path d="M20 9L0 0l16.182 13.35a6 6 0 0 0 7.636 0L40 0 20 9z" /></svg></li>
           <li className='absolute bottom-0 '><svg className={`${color[1]} md:w-[4rem] w-[2rem] h-[2rem] md:h-[4rem] `} xmlns="http://www.w3.org/2000/svg" width="40" height="15" viewBox="0 0 40 15" fill="none"><path d="M20 9L0 0l16.182 13.35a6 6 0 0 0 7.636 0L40 0 20 9z" /></svg></li>
         </ul>
       </div>
       <ImgCards />
-      <RracesCard/>
-      <CarSH/>
-      <Partners/>
+      <RracesCard />
+      <CarSH />
+      <Partners />
     </div>
   );
 }
@@ -69,17 +71,19 @@ export default Landing;
 
 
 
-const CarSH=()=>{
-  return(
-    <div className='w-screen md:h-auto h-screen relative'>
-      <img src="/About/car.avif" alt="SF90" className='w-full h-full object-cover' />
-      <div className='flex flex-col w-[35%] absolute top-[15%] left-[5%] gap-2'> 
+const CarSH = () => {
+  return (
+    <div className='w-full md:h-[100vh] overflow-hidden relative flex justify-center items-center bg-[#EAEFF2]'>
+      <div className="absolute top-0 h-screen inset-0 bg-gradient-to-b from-transparent to-black/50 z-1"></div>
+      <div className='md:block hidden'><img src="/About/car.avif" alt="loading" className='w-full h-full  object-cover scale-125' /></div>
+      <div className='md:hidden block'><img src="/About/front (2).avif" alt="loading" className='w-full h-screen  object-cover ' /></div>
+      <div className='flex flex-col w-[35%] absolute top-[15%] left-[5%] gap-2 z-2'>
         <div className='flex items-center text-[red] gap-2'>
           <div className='bg-[red] h-[0.3px] w-[25%]'></div>CAREER
         </div>
         <div className='flex flex-col gap-4 pl-6'>
-            <p className='text-4xl font-bold'>Our search for excellence</p>
-            <div className='flex text-medium font-medium items-center'>CAREER OPPORTUNITIES <MainButton/></div>
+          <p className='text-4xl font-bold'>Our search for excellence</p>
+          <div className='flex text-medium font-medium items-center'>CAREER OPPORTUNITIES <MainButton /></div>
         </div>
       </div>
     </div>
@@ -121,26 +125,26 @@ const Card = ({ src, heading, subHeading, dis }) => {
 
 
 
-const RracesCard=()=>{
+const RracesCard = () => {
 
 
-  const name=[{name:"CHARLES LECLERC",src:"/About/race (2).avif"},
-    {name:'CARLOS SAINZ',src:"/About/race (1).avif"},
-    {name:"CHARLES LECLERC",src:"/About/race (2).avif"},
-    {name:'CARLOS SAINZ',src:"/About/race (1).avif"},
+  const name = [{ name: "CHARLES LECLERC", src: "/About/race (2).avif" },
+  { name: 'CARLOS SAINZ', src: "/About/race (1).avif" },
+  { name: "CHARLES LECLERC", src: "/About/race (2).avif" },
+  { name: 'CARLOS SAINZ', src: "/About/race (1).avif" },
   ];
-  return(
-      <div className='grid grid-cols-1 md:grid-cols-2 w-full'>
-      {name.map((value)=>(
-          <div className='relative h-screen md:h-[70vh] overflow-hidden w-full'>
-              {/* <div className='w-full h-full bg-black/10 absolute z-1'></div> */}
-              <img src={value.src} alt="RACER" className='w-full h-full object-cover transition-transform ease-in-out hover:scale-150 '/>
-              <div className='absolute z-2 left-[50%] w-1/3 translate-x-[-50%] bottom-[10%] text-center flex flex-col items-center'>
-              <p className='font-bold text-3xl'>Offical Driver</p>
-              <p className='font-extrabold text-5xl '>{value.name}</p>
-              <div className='flex text-lg font-medium justify-center items-center'>DISCOVER MORE <MainButton/></div>
-              </div>
-          </div>))}
-      </div>
+  return (
+    <div className='grid grid-cols-1 md:grid-cols-2 w-full'>
+      {name.map((value) => (
+        <div className='relative h-screen md:h-[70vh] overflow-hidden w-full'>
+          {/* <div className='w-full h-full bg-black/10 absolute z-1'></div> */}
+          <img src={value.src} alt="RACER" className='w-full h-full object-cover transition-transform ease-in-out hover:scale-150 ' />
+          <div className='absolute z-2 left-[50%] w-1/3 translate-x-[-50%] bottom-[10%] text-center flex flex-col items-center'>
+            <p className='font-bold text-3xl'>Offical Driver</p>
+            <p className='font-extrabold text-5xl '>{value.name}</p>
+            <div className='flex text-lg font-medium justify-center items-center'>DISCOVER MORE <MainButton /></div>
+          </div>
+        </div>))}
+    </div>
   );
 }
