@@ -45,7 +45,7 @@ function Landing() {
 
       <div className='w-full h-screen flex justify-center items-center relative flex-col '>
 
-        <div className="h-screen absolute top-[45%] inset-0 bg-gradient-to-b from-transparent to-black/50 z-1"></div>
+        <div className="md:h-[113vh] h-screen absolute top-0 inset-0 bg-gradient-to-b from-transparent to-black/50 z-1"></div>
         <div className='md:hidden block'><img src="/About/mobile.avif" alt="loading" className='w-full h-screen  object-cover ' /></div>
         <div className='md:block hidden'><img src="/About/desktop.avif" alt="loading" className='w-full h-full  object-cover ' /></div>
         <div className='z-2 flex flex-col items-center text-center w-[80%] top-[55%] md:top-[70%] translate-y-[-30%] left-[50%] translate-x-[-50%] absolute md:w-[63%] gap-2'>
@@ -107,16 +107,18 @@ const ImgCards = () => {
 
 const Card = ({ src, heading, subHeading, dis }) => {
   return (
-    <div className='flex flex-col h-[85%] md:w-[26%] gap-1'>
-      <img src={src} alt="card_1" className='object-cover w-full h-[45%]' />
+    <div className='flex flex-col h-[85%] md:w-[26%] gap-1 custom-gradient overflow-hidden'>
+      <div className='w-full h-[45%] overflow-hidden'><img src={src} alt="card_1" className='object-cover w-full h-full hover:scale-110 transition-transform ease-linear' /></div>
+      <div className='p-2'>
       <div className='flex flex-col gap-2'>
         <p className='text-[red] text-lg font-semibold'>{heading}</p>
-        <p className='text-2xl font-bold'>{subHeading}</p>
+        <p className='text-xl font-bold'>{subHeading}</p>
         <p className='text-sm '>{dis}</p>
         <div className='flex items-center text-basic font-semibold'>
           <svg className="transition-transform rotate-90 fill-white" xmlns="http://www.w3.org/2000/svg" width="16" height="8" viewBox="0 0 16 8"><path d="M9.547.732L16 8 8 4 0 8 6.453.732A1.996 1.996 0 0 1 8 0c.623 0 1.18.285 1.547.732z" /></svg>
           READ MORE
         </div>
+      </div>
       </div>
     </div>
   );
@@ -138,7 +140,7 @@ const RracesCard = () => {
       {name.map((value) => (
         <div className='relative h-screen md:h-[70vh] overflow-hidden w-full'>
           {/* <div className='w-full h-full bg-black/10 absolute z-1'></div> */}
-          <img src={value.src} alt="RACER" className='w-full h-full object-cover transition-transform ease-in-out hover:scale-150 ' />
+          <img src={value.src} alt="RACER" className='w-full h-full object-cover transition-transform ease-linear hover:scale-150 ' />
           <div className='absolute z-2 left-[50%] w-1/3 translate-x-[-50%] bottom-[10%] text-center flex flex-col items-center'>
             <p className='font-bold text-3xl'>Offical Driver</p>
             <p className='font-extrabold text-5xl '>{value.name}</p>

@@ -48,7 +48,7 @@ function ContactUs() {
       <section className='w-screen h-auto flex relative text-white'>
         <div className='md:block left h-screen w-1/3 sticky top-0 flex'>
           <div
-            className='absolute w-[4px] h-6 left-[52%] top-[11%] bg-[red] transition-transform duration-[0.5s] redBar'
+            className='absolute w-[4px] h-6 left-[47%] top-[12%] bg-[red] transition-transform duration-[0.5s] redBar'
             style={{ transform: `translateY(${translation}px)` }}
           ></div>
           <div className='flex flex-col w-full items-end md:pr-20 md:py-[76px] '>
