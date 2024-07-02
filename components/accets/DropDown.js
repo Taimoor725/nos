@@ -44,8 +44,8 @@ function CountrySelector({ onCountrySelect,dis }) {
   };
 
   return (
-    <div className="w-full mx-auto mt-7 relative flex flex-col gap-4">
-      <div className='text-[red] font-lg'>{dis}</div>
+    <div className="w-full md:mx-auto md:mt-7 relative flex flex-col gap-2 md:gap-4 z-50">
+      <div className='text-[red] text-lg'>{dis}</div>
       <label htmlFor="country" className="block text-sm font-medium text-gray-700">
         COUNTRY
       </label>
@@ -54,9 +54,9 @@ function CountrySelector({ onCountrySelect,dis }) {
           id="country"
           value={selectedCountry}
           onChange={handleCountryChange}
-          className="my-1 text-black border-none outline-none block w-full py-2 bg-white rounded-md focus:ring-indigo-500 focus:border-indigo-500 md:text-2xl md:font-bold md:font-serif"
+          className="my-1 text-black border-none outline-none block w-full py-2 bg-white rounded-md focus:ring-indigo-500 focus:border-indigo-500 text-sm md:text-2xl md:font-bold md:font-serif"
         >
-          <option value="" className='font-bold text-2xl'>Choose your country or region</option>
+          <option value="" className='font-bold text-sm md:text-2xl'>Choose your country or region</option>
           {countries.map((country) => (
             <option key={country} value={country}>
               {country}

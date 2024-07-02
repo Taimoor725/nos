@@ -1,10 +1,13 @@
 'use client'
 import FilterDropDown from '@/components/accets/FilterDropDown';
 import { useEffect, useState } from 'react';
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import CarCard from './CarCard'
 import { Pagination } from '@nextui-org/react';
 import CarCardHorizontal from './CarCardHorizontal'
 import CarDetail from './CarDetail'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faFilter, faL } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function Filter() {
@@ -14,18 +17,63 @@ export default function Filter() {
   const [postPerPage, setPosts] = useState(8);
   // for grid and list display
   const [grid, setGrid] = useState([false, true]);
-  const [Detail,setDetail]=useState(false)
-  const [selectCar,setCar]=useState('')
+  const [Detail, setDetail] = useState(false)
+  const [selectCar, setCar] = useState('')
+
+
+  
+  // its responsivness is done
+  const Selector = () => {
+    return (
+      <div className="w-[85%] md:min-h-full h-full rounded-md flex flex-col text-white custom-gradient pb-3">
+        <div className="w-full font-medium text-xl p-3">FILTERN NACH</div>
+        <div className=" grid-cols-4 px-3 gap-2 md:grid hidden">
+          <FilterDropDown label={'Marken'} data={data.eingen} />
+          <FilterDropDown label={'Model'} data={data.model} />
+          <FilterDropDown label={'Price'} data={data.price} />
+          <FilterDropDown label={'Select'} data={data.anti} />
+          <FilterDropDown label={'GetRiBert'} data={data.geartpe} />
+        </div>
+
+
+
+        <div className="px-3 gap-2 md:hidden block mb-2 w-full">
+        <Mobile_filter/>
+      </div>
+      </div>
+    );
+  };
+
+
+
 
   useEffect(() => {
     if (grid[0] === true) {
       setPosts(3);
-      const set='setPage(1)'
+      const set = 'setPage(1)'
     } else {
       setPosts(8);
-      const set='setPage(1)'
-      
+      const set = 'setPage(1)'
+
     }
+
+    const updatePosts = () => {
+      console.log(window.innerWidth);
+      if (window.innerWidth < 700) {
+        setPosts(3);
+      } else {
+        setPosts(8);
+      }
+    };
+
+    updatePosts();
+    window.addEventListener('resize', updatePosts);
+
+
+    return () => {
+      window.removeEventListener('resize', updatePosts);
+    };
+
   }, [grid]);
 
   let lastPostIndex = currentPage * postPerPage;
@@ -33,17 +81,17 @@ export default function Filter() {
   let SlicedCarsData = CarsData.slice(firstPostIndex, lastPostIndex);
 
 
-  const detailHandler=(value)=>{
-      setGrid([false,false])
-      setCar(value)
-      setDetail(true)
+  const detailHandler = (value) => {
+    setGrid([false, false])
+    setCar(value)
+    setDetail(true)
   }
 
 
-  const detailHandlerInvers=()=>{
-    setGrid([false,true])
+  const detailHandlerInvers = () => {
+    setGrid([false, true])
     setDetail(false)
-}
+  }
 
 
 
@@ -57,18 +105,18 @@ export default function Filter() {
         {!Detail && (<div className='w-full h-[10vh] flex'>
           <div className='flex items-center gap-2'><p className='font-bold text-3xl'>{resultCount}</p><p className='font-medium text-3xl'>Ergebnisse</p></div>
           <div className='flex-grow flex justify-end items-center gap-3'>
-            <div ><img src="/sales/list-grey.png" alt="list" className='object-cover md:w-8 md:h-[30px] cursor-pointer hover:scale-105' onClick={() => setGrid([true, false])} /></div>
-            <div ><img src="/sales/grid-black.svg" alt="list" className='fill-white object-cover md:w-8 md:h-[30px] cursor-pointer hover:scale-105' onClick={() => setGrid([false, true])} /></div>
-            <DropDown data={data.filter}/>
+            <div className='md:block hidden'><img src="/sales/list-grey.png" alt="list" className='object-cover md:w-8 md:h-[30px] cursor-pointer hover:scale-105' onClick={() => setGrid([true, false])} /></div>
+            <div className='md:block hidden'><img src="/sales/grid-black.svg" alt="list" className='fill-white object-cover md:w-8 md:h-[30px] cursor-pointer hover:scale-105' onClick={() => setGrid([false, true])} /></div>
+            <div className='md:block hidden'><DropDown data={data.filter} /></div>
           </div>
         </div>)}
 
 
         {/* Results itSelf */}
         {grid[1] && (
-          <div className='grid grid-cols-4 gap-4'>
+          <div className='md:grid flex flex-col grid-cols-4 gap-4'>
             {SlicedCarsData.map((value, indev) => (
-               <CarCard data={value} onClick={()=>detailHandler(value)}/>
+              <CarCard data={value} onClick={() => detailHandler(value)} />
             ))}
           </div>)}
 
@@ -76,7 +124,7 @@ export default function Filter() {
         {grid[0] && (
           <div className='w-full grid grid-cols-1 gap-4 overflow-hidden'>
             {SlicedCarsData.map((car, index) => (
-              <CarCardHorizontal key={index} data={car} onClick={()=>detailHandler(car)}/>
+              <CarCardHorizontal key={index} data={car} onClick={() => detailHandler(car)} />
             ))}
           </div>
         )
@@ -85,7 +133,7 @@ export default function Filter() {
 
 
         {Detail && (
-          <CarDetail data={selectCar} onClick={detailHandlerInvers}/>
+          <CarDetail data={selectCar} onClick={detailHandlerInvers} />
         )}
       </div>
     );
@@ -108,7 +156,7 @@ export default function Filter() {
         <div className='absolute w-[30%] flex flex-col gap-3 top-[50%] translate-y-[-50%] left-[10%]'>
           <p className='text-2xl font-bold'>Headquarter</p>
           <div className='flex flex-col w-full'>
-            <p className='font-extrabold text-5xl'>Ferrari SpA, headquarters and factory</p>
+            <p className='font-extrabold md:text-5xl text-3xl'>Ferrari SpA, headquarters and factory</p>
           </div>
           <div className='flex flex-col gap-1'>
             <p className='text-xl font-medium'>ABC USA ABC Street 121212</p>
@@ -117,7 +165,7 @@ export default function Filter() {
         </div>
       </div>
       {/* Filter */}
-      {!Detail && (<div className="w-full min-h-[50vh] flex py-[5vh] justify-center">
+      {!Detail && (<div className="w-full h-auto flex py-[5vh] justify-center">
         <Selector />
       </div>)}
 
@@ -125,25 +173,10 @@ export default function Filter() {
       <div className='w-full h-auto flex justify-center'>
         <Results />
       </div>
-      <div className='flex w-[85%] justify-center p-4'>{!Detail && (<Pagination total={(CarsData.length/postPerPage)+1} initialPage={1} onChange={(page) => setPage(page)} />)}</div>
+      <div className='flex w-[85%] justify-center p-4'>{!Detail && (<Pagination total={(CarsData.length / postPerPage) + 1} initialPage={1} onChange={(page) => setPage(page)} />)}</div>
     </div>
   );
 }
-
-const Selector = () => {
-  return (
-    <div className="w-[85%] min-h-full rounded-md flex flex-col text-white custom-gradient ">
-      <div className="w-full font-medium text-xl p-3">FILTERN NACH</div>
-      <div className="grid grid-cols-4 px-3 gap-2">
-        <FilterDropDown label={'Marken'} data={data.eingen} />
-        <FilterDropDown label={'Model'} data={data.model} />
-        <FilterDropDown label={'Price'} data={data.price} />
-        <FilterDropDown label={'Select'} data={data.anti} />
-        <FilterDropDown label={'GetRiBert'} data={data.geartpe} />
-      </div>
-    </div>
-  );
-};
 
 
 const data = {
@@ -156,14 +189,13 @@ const data = {
 };
 
 
-
 function DropDown({ data }) {
   const [selected, setSelected] = useState('')
   const Handler = (e) => {
     setSelected(e.target.value)
   }
   return (
-    <select name="" id="filtr" onChange={Handler} value={selected} className='w-[30%] p-[12px] text-sm border-[1px] border-[gray] text-black'>
+    <select name="" id="filtr" onChange={Handler} value={selected} className='w-full p-[12px] text-sm border-[1px] border-[gray] text-black'>
       <option value="" disabled >Neueste Angebote zuerst</option>
       {data.map((data) => (
         <option value={data}>{data}</option>
@@ -171,6 +203,39 @@ function DropDown({ data }) {
     </select>
   )
 }
+
+export function Mobile_filter() {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+  return (
+    <>
+      <Button className='w-full flex gap-2 text-[blue]' onPress={onOpen}><FontAwesomeIcon icon={faFilter} className='w-6 h-6 text-[blue]'/>Open Filter</Button>
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">Filter</ModalHeader>
+              <ModalBody>
+                  
+                      <FilterDropDown label='Marken' data={data.eingen} />
+                      <FilterDropDown label='Model' data={data.model} />
+                      <FilterDropDown label='Price' data={data.price} />
+                      <FilterDropDown label='Select' data={data.anti} />
+                      <FilterDropDown label='GetRiBert' data={data.geartpe} />
+            </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onPress={onClose}>
+              Apply
+            </Button>
+          </ModalFooter>
+        </>
+          )}
+      </ModalContent>
+    </Modal >
+    </>
+  );
+}
+
 
 const CarsData = [
   {

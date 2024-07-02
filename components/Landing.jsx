@@ -161,7 +161,7 @@ const Landing = () => {
 
   return (
     <NextUIProvider>
-      <section className="w-full overflow-x-hidden">
+      <section className="w-full overflow-x-hidden bg-black">
         <div className="w-screen h-screen relative overflow-hidden">
           <video
             src="/videos/intro.mp4"
@@ -171,7 +171,7 @@ const Landing = () => {
             loop
 
           />
-          <div className="flex flex-col items-center text-center w-[40%] gap-4 text-white h-[20rem] absolute z-10 bottom-10 left-[30%] translate-x-[-50%] justify-center" data-aos="fade-up"
+          <div className="flex flex-col items-center text-center md:w-[40%] w-[80%] gap-4 text-white h-[20rem] absolute z-10 bottom-10 left-[50%] translate-x-[-50%] justify-center " data-aos="fade-up"
             data-aos-anchor-placement="top-center">
             <p className="text-lg font-bold" data-aos="fade-up" data-aos-delay="50">Sports Cars</p>
             <p className="text-4xl font-extrabold" data-aos="fade-up" data-aos-delay="100">STARTEN SIE DEN MOTOR</p>

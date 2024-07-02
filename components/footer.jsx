@@ -3,15 +3,77 @@ import React, { useState } from "react";
 import "./Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faTiktok, faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
     <div className="bg-black max-w-screen overflow-x-hidden">
       <footer className="footer">
         <div className="w-full p-4 text-2xl font-light flex justify-center items-end">
-          LOGO AND ADDRESS
+          {/* logo has to be added here */}
+          <div className="w-full h-[50vh] bg-black relative flex justify-center items-center">
+            <div className="w-full h-full bg-black/90 absolute z-1"></div>
+            <img src="/footer_use.png" alt="footer" className=" w-full h-full object-cover z-0" />
+            <div className="absolute w-[90%] h-[80%] flex flex-col">
+              <div className="flex w-full h-1/2 justify-center z-2 items-start relative"><img src="/company_logo_2.svg" alt="logo" className=" md:w-60 md:h-60  object-cover absolute top-[-7rem] md:top-[-5rem]" /></div>
+              <div className="md:flex hidden w-full h-1/2 z-2 justify-around">
+                <div className="flex flex-col items-center gap-1">
+                  <FontAwesomeIcon icon={faPhone} className="text-[green]" />
+                  <p className="text-lg">+4101010101</p>
+                  <p className="text-[green] text-sm font-bold">SUPPORT</p>
+                </div>
+
+                <div className="flex flex-col items-center gap-1">
+                  <FontAwesomeIcon icon={faLocationDot} className="text-[green]" />
+                  <p className="font-light text-[16px] md:w-28">Lorem ipsum dolor sit amet.</p>
+                </div>
+
+                <div className="flex flex-col items-center gap-1">
+                  <FontAwesomeIcon icon={faEnvelope} className="text-[green]" />
+                  <p className="text-sm font-semibold">@Kristian.abc</p>
+                </div>
+
+                <div className="flex flex-col items-center gap-1">
+                  <FontAwesomeIcon icon={faClock} className="text-[green]" />
+                  <div className="flex gap-1 text-sm"><p className="text-[green]">MO-FR:</p><p>8:00-12:00/13:15-18:30</p></div>
+                  <div className="flex text-sm gap-1"><p className="text-[green]">SA</p><p>Vereinbarung</p></div>
+                </div>
+              </div>
+
+              <div className="flex-col md:hidden flex z-2 gap-4">
+                <div className="flex justify-around">
+                  <div className="flex flex-col items-center gap-1">
+                    <FontAwesomeIcon icon={faPhone} className="text-[green]" />
+                    <p className="text-lg">+4101010101</p>
+                    <p className="text-[green] text-sm font-bold">SUPPORT</p>
+                  </div>
+
+                  <div className="flex flex-col items-center gap-1">
+                    <FontAwesomeIcon icon={faLocationDot} className="text-[green]" />
+                    <p className="font-light text-[16px] w-28">Lorem ipsum dolor sit amet.</p>
+                  </div>
+                </div>
+
+                <div className="flex justify-around">
+                  <div className="flex flex-col items-center gap-1">
+                    <FontAwesomeIcon icon={faEnvelope} className="text-[green]" />
+                    <p className="text-sm font-semibold">@Kristian.abc</p>
+                  </div>
+
+                  <div className="flex flex-col items-center gap-1">
+                    <FontAwesomeIcon icon={faClock} className="text-[green]" />
+                    <div className="flex gap-1 text-xs"><p className="text-[green]">MO-FR:</p><p className="text-[10px]">8:00-12:00/13:15-18:30</p></div>
+                    <div className="flex text-xs gap-1"><p className="text-[green]">SA</p><p className="text-[10px]">Vereinbarung</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="container mt-12">
+        <div className="container ">
           <div className="flex justify-around">
             <FooterColumn
               title="RACING"
@@ -76,7 +138,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-full p-3 font-light text-xl text-white flex justify-center items-center">
-        <img src="/Layer 1_logo.png" alt="Logo" className="w-32 h-auto" />
+        <img src="/Smtak_logo.svg" alt="Logo" className="w-32 h-auto " />
       </div>
     </div>
   );

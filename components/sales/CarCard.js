@@ -3,18 +3,18 @@ import React from 'react';
 function CarCard({ data, onClick }) {
   return (
     <div 
-      className='gap-2 w-full h-[82vh] flex flex-col overflow-hidden cursor-pointer custom-gradient'
+      className='gap-2 w-full :h-[82vh] flex flex-col overflow-hidden cursor-pointer custom-gradient'
       onClick={onClick}
     >
-      <div className='overflow-hidden'>
+      <div className='overflow-hidden md:h-[30%] w-full'>
         <img 
           src={data.imageUrl[0]} 
           alt={data.name} 
-          className="object-cover hover:scale-110 transition-transform ease-in-out duration-[1s]" 
+          className="object-cover w-full h-full hover:scale-110 transition-transform ease-in-out duration-[1s]" 
         />
       </div>
 
-      <div className='p-2'>
+      <div className='p-3'>
         <p>{data.name}</p>
         <p className='font-bold text-xl'>{data.price}</p>
       </div>

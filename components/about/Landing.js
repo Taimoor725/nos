@@ -73,7 +73,7 @@ export default Landing;
 
 const CarSH = () => {
   return (
-    <div className='w-full md:h-[100vh] overflow-hidden relative flex justify-center items-center bg-[#EAEFF2]'>
+    <div className='w-full md:h-[100vh] overflow-hidden relative flex justify-center items-center'>
       <div className="absolute top-0 h-screen inset-0 bg-gradient-to-b from-transparent to-black/50 z-1"></div>
       <div className='md:block hidden'><img src="/About/car.avif" alt="loading" className='w-full h-full  object-cover scale-125' /></div>
       <div className='md:hidden block'><img src="/About/front (2).avif" alt="loading" className='w-full h-screen  object-cover ' /></div>

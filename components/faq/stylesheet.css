@@ -1,0 +1,35 @@
+.custom-gradient {
+    background: transparent;
+    backdrop-filter: blur(30px); /* Increased blur value */
+    -webkit-backdrop-filter: blur(30px); /* For Safari support with increased blur value */
+    background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.01), rgba(55, 65, 81, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Optional: Add a border for more glass effect */
+    border-radius: 16px;
+    padding: 20px;
+  }
+  
+  .faq-container {
+    margin: 20px 0;
+    
+  }
+  
+  .faq-item {
+    margin-bottom: 10px;
+  }
+  
+  .faq-question {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
+  
+  .faq-answer {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+  

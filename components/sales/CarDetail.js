@@ -15,14 +15,16 @@ function CarDetail({ data, onClick }) {
 
   return (
 
-    <div className='flex flex-col w-[85vw] h-auto gap-2 text-white'>
+    <div className='flex  flex-col w-[85vw] h-auto gap-2 text-white'>
       <button
-        className='w-[20%] py-2 font-bold text-blue-500 flex items-center mt-2 hover:scale-105'
+        className='md:w-[20%] w-[40%] py-2 font-bold text-blue-500 flex items-center mt-2 hover:scale-105'
         onClick={onClick}
       >
         <ion-icon name="chevron-back-outline"></ion-icon>Zurück zur Übersicht
       </button>
-      <div className='flex w-full h-auto gap-2'>
+
+      {/* for desktop */}
+      <div className='md:flex hidden w-full h-auto gap-2 '>
         <div className='w-1/2 h-full flex flex-col gap-3'>
           {/* first half */}
           <div className='font-medium text-4xl text-white'>{data.name}</div>
@@ -67,6 +69,58 @@ function CarDetail({ data, onClick }) {
           </div>
         </div>
       </div>
+
+
+      {/* for Mobile */}  
+      <div className='md:hidden flex flex-col w-full h-auto gap-4 pr-2'>
+        <div className='w-full h-full flex flex-col gap-3 '>
+          {/* first half */}
+          <div className='font-medium text-4xl w-full text-white '>{data.name}</div>
+          <img
+            src={mainImg}
+            alt="Car"
+            className='object-cover w-full h-full'
+          />
+          <div className='grid grid-cols-4 gap-2 w-full'>
+            {data.imageUrl.slice(1).map((value, index) => (
+              <img
+                key={index}
+                src={value}
+                alt='Car detail'
+                className='object-cover cursor-pointer'
+                onClick={() => handleImgClick(value)}
+              />
+            ))}
+          </div>
+          <div className='flex h-auto w-[100%] '>
+            {/* 1st half Down part */}
+            {/* responsive nes done */}
+          <CarInfo data={data} />
+          </div>
+        </div>
+
+        <div className='w-full h-auto flex flex-col relative gap-2'>
+          {/* 2nd half */}
+          <FinalDetails data={data} />
+          
+
+
+          <div className='flex flex-col w-full h-auto p-3 gap-4 rounded-md custom-gradient'>
+            <p className='font-light text-4xl'>Energiedaten</p>
+            <div className='flex flex-col gap-1'>
+            <div className='flex text-xl'>
+              CO₂ Emission (kombiniert)
+              <div className='flex-grow flex justify-end font-bold text-white'>{data.CombineCO2}</div>
+            </div>
+            <div className='flex text-xl'>
+              Euro-Norm
+              <div className='flex-grow flex justify-end font-bold text-white'>{data.EuroNorm}</div>
+            </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -78,7 +132,7 @@ export default CarDetail;
 
 const FinalDetails = ({ data }) => {
   return (
-    <div className='h-[60vh] w-full flex p-3 flex-col text-[#ddd8d8] gap-4 mt-2  custom-gradient
+    <div className='h-full w-full flex p-3 flex-col text-[#ddd8d8] gap-4 mt-2  custom-gradient
      rounded-md'>
       <div className='text-4xl font-light'> FAHRZEUGDATEN </div>
       <div className='flex flex-col gap-1'>
@@ -128,7 +182,7 @@ const FinalDetails = ({ data }) => {
 const CarInfo = ({ data }) => {
   return (
 
-    <div className='flex flex-col w-full h-full gap-3 text-white'>
+    <div className='flex flex-col w-full h-full gap-3 text-white mb-2'>
       <div className='flex items-center font-bold text-3xl'>{data.price}</div>
       <div className='flex p-2 flex-col text-[#ddd8d8]'>
         <div className='flex'>
@@ -166,9 +220,9 @@ const CarInfo = ({ data }) => {
       <Button color='primary' size='md' className='text-[22px]'>
         Anfrege sender
       </Button>
-      <div className='w-full h-[0.3px] bg-slate-400 mt-10'></div>
+      <div className='w-full h-[0.3px] bg-slate-400 md:mt-10 mt-auto'></div>
       <Button className='mt-4' color='danger'><div className='flex w-full h-full justify-center items-center gap-2 text-white'><FontAwesomeIcon icon={faDownload} className='w-5 h-5' /><div className='text-xl'>Download PDF</div></div></Button>
-      <div className='w-full h-[0.3px] bg-slate-400 mt-10'></div>
+      <div className='w-full h-[0.3px] bg-slate-400 md:mt-10 mt-auto'></div>
       <div className='flex flex-col w-full gap-2'>
         <div className='flex flex-col gap-3 font-light'><p className='text-xl font-bold'>Lhr Handler</p><p className='text-xl'>{data.deler}</p></div>
         <div className='flex items-center text-xl font-light gap-3'><FontAwesomeIcon icon={faLocation} className='w-7 h-7' />{data.adress}</div>
